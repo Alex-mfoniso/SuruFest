@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="bower_components/aos/dist/aos.css" /> -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </head>
+
+  <body class="font-[Poppins] bg-[#F7F7FC] h-screen">
+    <header class="bg-white">
+      <nav class="flex justify-between items-center w-[92%] mx-auto">
+        <div>
+          <img class="w-[5rem] cursor-pointer" src="./img/logo.png" alt="..." />
+        </div>
+        <div
+          class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
+        >
+          <ul
+            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8"
+          >
+            <li>
+              <a class="hover:text-gray-500" href="#">About</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Event</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Resource</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Sponsors</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <button
+            class="invisible bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
+          >
+            Sign in
+          </button>
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="text-3xl cursor-pointer md:hidden"
+          ></ion-icon>
+        </div>
+      </nav>
+    </header>
+
+    <section aria-label="Newest Photos" class="bg-[#EFF0F6] p-[2rem] relative">
+      <div class="relative overflow-hidden h-screen">
+        <!-- Overlay -->
+        <div
+          class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
+        ></div>
+        <!-- Slide Up Text -->
+        <div
+          class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up"
+        >
+          <br />
+
+          <div class="md:text-3xl lg:text-4xl text-[45px] font-bold">
+            <span id="typewriter-text"></span>
+            <span class="border-r-2 border-[#40405D] animate-blink ml-1"></span>
+            <!-- Blinking cursor -->
+          </div>
+        </div>
+
+        <!-- Slider Content -->
+        <button
+          class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+          id="prev-button"
+        >
+          <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios/50/less-than-2.png"
+            alt="less-than-2"
+          />
+        </button>
+        <button
+          class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+          id="next-button"
+        >
+          <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios/50/more-than-2.png"
+            alt="more-than-2"
+          />
+        </button>
+        <ul
+          class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
+          id="slider"
+        >
+          <li
+            class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+            data-active
+          >
+            <img
+              src="/img/mainpic.png"
+              alt="Nature Image #1"
+              class="block w-screen object-cover object-center h-full rounded-[25px]"
+            />
+          </li>
+          <li
+            class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+          >
+            <img
+              src="./img/insta.png"
+              alt="Nature Image #2"
+              class="block w-screen object-cover object-center h-full rounded-[25px]"
+            />
+          </li>
+          <li
+            class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+          >
+            <img
+              src="./img/kids.png"
+              alt="Nature Image #3"
+              class="block w-screen object-cover object-center h-full rounded-[25px]"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="scrolling-container" id="text-scrolling">
+      <div
+        class="scrolling-text--inner direction-left flex items-center whitespace-nowrap font-semibold text-[#1D1D2F] py-2 relative overflow-hidden z-10"
+        style="--marquee-speed: 30s"
+      >
+        <div class="scrolling-text flex">
+          <div class="scrolling-text--item px-8 outline-text--true">
+            <span>The clock is ticking</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>You don't want to miss this</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Dont forget the date</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Tick tock tick tock</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Dont forget the date</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Your presence mattters </span>
+          </div>
+        </div>
+
+        <div class="scrolling-text flex">
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Your presence mattters </span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>You don't want to miss this</span>
+          </div>
+
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Dont forget the date</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Swap crypto.</span>
+          </div>
+
+          <div class="scrolling-text--item px-8 outline-text--true">
+            <span>The clock is ticking</span>
+          </div>
+
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>You don't want to miss this</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center ml-[5rem] mr-[5rem]">
+      <div
+        id="countdown"
+        class="text-2xl mt-4 font-mono bg-[white] text-[#1D1D2F] p-8 rounded-lg shadow-lg"
+      >
+        <h1 class="text-4xl font-bold">Countdown to December 15</h1>
+        <div class="flex justify-center gap-4">
+          <div id="days" class="text-center">
+            <p class="text-5xl" id="days-value">--</p>
+            <p class="text-lg">Days</p>
+          </div>
+          <div id="hours" class="text-center">
+            <p class="text-5xl" id="hours-value">--</p>
+            <p class="text-lg">Hours</p>
+          </div>
+          <div id="minutes" class="text-center">
+            <p class="text-5xl" id="minutes-value">--</p>
+            <p class="text-lg">Minutes</p>
+          </div>
+          <div id="seconds" class="text-center">
+            <p class="text-5xl" id="seconds-value">--</p>
+            <p class="text-lg">Seconds</p>
+          </div>
+        </div>
+      </div>
+
+      <p id="message" class="mt-6 text-3xl font-semibold text-green-600 hidden">
+        Join the Fun!
+      </p>
+    </div>
+
+    <div class="scrolling-container" id="text-scrolling">
+      <div
+        class="scrolling-text--inner direction-left flex items-center whitespace-nowrap font-semibold text-[#1D1D2F] py-2 relative overflow-hidden z-10"
+        style="--marquee-speed: 30s"
+      >
+        <div class="scrolling-text flex">
+          <div class="scrolling-text--item px-8 outline-text--true">
+            <span>The clock is ticking</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>You don't want to miss this</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Dont forget the date</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Tick tock tick tock</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Dont forget the date</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Your presence mattters </span>
+          </div>
+        </div>
+
+        <div class="scrolling-text flex">
+          <div class="scrolling-text--item px-8 outline-text--true">
+            <span>The clock is ticking</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>You don't want to miss this</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>User friendly.</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Tick tock tick tock</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Dont forget the date</span>
+          </div>
+          <div class="scrolling-text--item px-8 outline-text--false">
+            <span>Your presence mattters </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center mb-[2rem] mt-[2rem]">
+      <div
+        class="flex justify-center items-center bg-[#484870] rounded-full w-12 h-12"
+      >
+        <i class="fa-solid fa-arrow-down text-white animate-bounce"></i>
+      </div>
+    </div>
+    <section id="features" class="p-4 mt-[2rem] bg-[#1D1D2F]">
+      <div>
+        <p class="text-center text-[#494957] text-[40px]">Event Highlight</p>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center gap-8">
+        <!-- Advance analytics card -->
+        <div
+          class="rounded-xl bg-[#EFF0F6] p-8 shadow-lg w-full md:w-[563px] transform transition duration-300 hover:rotate-3 hover:scale-105 force-transform"
+        >
+          <h3 class="text-2xl font-bold mb-4">Beuty Pagent</h3>
+          <p class="leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Obcaecati, nihil.
+          </p>
+          <img
+            src="./img/advance analytics.png"
+            alt="Advance analytics"
+            class="mt-4 rounded-b-xl"
+          />
+        </div>
+
+        <!-- User journey card -->
+        <div
+          class="rounded-xl bg-[#EFF0F6] p-8 shadow-lg w-full md:w-[563px] transform transition duration-300 hover:-rotate-3 hover:scale-105"
+        >
+          <h3 class="text-2xl font-bold mb-4">Awards</h3>
+          <p class="leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Obcaecati, nihil.
+          </p>
+          <img
+            src="./img/user journey.png"
+            alt="User journey"
+            class="mt-4 rounded-b-xl"
+          />
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col md:flex-row justify-center gap-8">
+        <!-- Repeat User journey and Advance analytics cards -->
+        <div
+          class="rounded-xl bg-[#EFF0F6] p-8 shadow-lg w-full md:w-[563px] transform transition duration-300 hover:rotate-3 hover:scale-105"
+        >
+          <h3 class="text-2xl font-bold mb-4">Talent hunt</h3>
+          <p class="leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Obcaecati, nihil.
+          </p>
+          <img
+            src="./img/user journey.png"
+            alt="User journey"
+            class="mt-4 rounded-b-xl"
+          />
+        </div>
+
+        <div
+          class="rounded-xl bg-[#EFF0F6] p-8 shadow-lg w-full md:w-[563px] transform transition duration-300 hover:-rotate-3 hover:scale-105"
+        >
+          <h3 class="text-2xl font-bold mb-4">Games</h3>
+          <p class="leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Obcaecati, nihil.
+          </p>
+          <img
+            src="./img/advance analytics.png"
+            alt="Advance analytics"
+            class="mt-4 rounded-b-xl"
+          />
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center mt-[3rem] p-[30px]">
+        <a
+          href="#"
+          class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+        >
+          Learn More
+        </a>
+      </div>
+    </section>
+    <div class="flex items-center justify-center">
+      <p class="text-center text-[#494957] text-[40px]">Our sponspors</p>
+    </div>
+    <div
+      class="relative overflow-hidden py-12 bg-[#DCDDEB] flex items-center justify-center"
+    >
+      <div class="logos-slide flex gap-10 animate-slide">
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+        <img src="./img/logo.png" class="h-[70px] w-[350px]" />
+      </div>
+
+      <!-- Left gradient -->
+      <div
+        class="absolute top-0 left-0 h-full w-[250px] bg-gradient-to-l from-transparent to-white z-10"
+      ></div>
+
+      <!-- Right gradient -->
+      <div
+        class="absolute top-0 right-0 h-full w-[250px] bg-gradient-to-r from-transparent to-white z-10"
+      ></div>
+    </div>
+
+    <div class="flex justify-center items-center mt-[3rem] p-[30px]">
+      <a
+        href="#"
+        class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+      >
+        Learn More
+      </a>
+    </div>
+    <div class="text-2xl md:text-3xl lg:text-4xl">
+      <span id="typewriter-text"></span>
+      <span class="border-r-2 border-white animate-blink ml-1"></span>
+      <!-- Blinking cursor -->
+    </div>
+
+    <footer class="bg-[#1D1D2F]">
+      <div class="w-full p-[10px_30px_20px]">
+        <!-- Footer Navigation -->
+        <div class="pt-1">
+          <ul class="flex justify-center list-none">
+            <li class="mx-3">
+              <a
+                href="#"
+                class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Home</a
+              >
+            </li>
+            <li class="mx-3">
+              <a
+                href="#"
+                class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >About</a
+              >
+            </li>
+            <li class="mx-3">
+              <a
+                href="#"
+                class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Resource</a
+              >
+            </li>
+            <li class="mx-3">
+              <a
+                href="#"
+                class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Sponsors</a
+              >
+            </li>
+            <li class="mx-3">
+              <a
+                href="#"
+                class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="p-5 text-center">
+        <p class="text-white">
+          Copyright &copy;2023;
+          <span class="uppercase tracking-wide font-normal opacity-70"
+            >SuruFest</span
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Animation duration
+        offset: 100, // Offset before the animation starts
+        easing: "ease-in-out", // Easing for the animation
+      });
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
