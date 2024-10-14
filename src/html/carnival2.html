@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<style>
+    body {
+            overflow-x: hidden;
+        }
+        .animated-background {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.3), rgba(255, 0, 0, 0.3));
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .float-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .float-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .vendor-card {
+            perspective: 1000px;
+            transition: transform 0.5s;
+        }
+        .vendor-card:hover .inner-card {
+            transform: rotateY(180deg);
+        }
+        .hidden-object {
+            position: absolute;
+            /* Customize size and position for hidden objects */
+        }
+</style>
+<body>
+    
+    
+      <!-- Header -->
+      <header class="bg-green-500 text-white">
+        <div class="container mx-auto flex justify-between items-center p-5">
+          <!-- Logo -->
+          <div class="text-3xl font-bold">
+            <a href="#">
+              <img src="https://via.placeholder.com/120x50" alt="Logo" class="h-10">
+            </a>
+          </div>
+    
+          <!-- Links for desktop -->
+          <nav class="hidden lg:flex space-x-8 items-center">
+            <a href="#" class="hover:text-gray-300">About</a>
+            <div class="relative group">
+              <!-- Event dropdown for desktop -->
+              <button class="flex items-center space-x-1 hover:text-gray-300">
+                <span>Event</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10">
+                <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100">Football</a>
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Basketball</a>
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Table Tennis</a>
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Relay Race</a>
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Volleyball</a>
+              </div>
+            </div>
+            <a href="#" class="hover:text-gray-300">Resource</a>
+            <a href="#" class="hover:text-gray-300">Sponsors</a>
+            <a href="#" class="hover:text-gray-300">Contact</a>
+          </nav>
+    
+          <!-- Hamburger icon for mobile -->
+          <div class="lg:hidden">
+            <button id="menu-toggle" class="focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+    
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600">
+          <nav class="flex flex-col space-y-2 p-4 text-white">
+            <a href="#" class="hover:text-gray-300">About</a>
+            <!-- Event dropdown always visible for mobile -->
+            <div class="relative">
+              <div class="flex justify-between items-center w-full text-left hover:text-gray-300">
+                <span>Event</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <!-- Dropdown always visible in mobile -->
+              <div class="flex flex-col space-y-1 pl-4 mt-2">
+                <a href="/src/html/football.html" class="hover:text-gray-300">Football</a>
+                <a href="#" class="hover:text-gray-300">Basketball</a>
+                <a href="#" class="hover:text-gray-300">Table Tennis</a>
+                <a href="#" class="hover:text-gray-300">Relay Race</a>
+                <a href="#" class="hover:text-gray-300">Volleyball</a>
+              </div>
+            </div>
+            <a href="#" class="hover:text-gray-300">Resource</a>
+            <a href="#" class="hover:text-gray-300">Sponsors</a>
+            <a href="/src/html/contact.html" class="hover:text-gray-300">Contact</a>
+          </nav>
+        </div>
+      </header>
+    
+      <script>
+        // Toggle the mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobileMenu.style.maxHeight;
+          if (!isOpen || mobileMenu.style.maxHeight === '0px') {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          } else {
+            mobileMenu.style.maxHeight = '0px';
+          }
+        });
+      </script>
+
+
+    <!-- 1. Animated Hero Section -->
+    <section class="relative w-full h-screen overflow-hidden">
+        <div class="absolute inset-0 animated-background"></div>
+        <div class="flex flex-col justify-center items-center h-full">
+            <h1 class="text-5xl font-bold text-white">Welcome to Fanty Carnival!</h1>
+            <button class="bg-yellow-500 text-white px-6 py-2 rounded mt-4 hover:scale-105 transition-transform" id="exploreBtn">Explore the Carnival</button>
+        </div>
+    </section>
+
+    <!-- 2. Scroll-triggered Animations -->
+    <section class="py-20">
+        <h2 class="text-3xl font-semibold text-center">Parade Details</h2>
+        <div class="float-in" id="paradeDetails">
+            <p class="text-center">Join us for an unforgettable parade from Surulere to Mainland!</p>
+        </div>
+        <div class="flex justify-center mt-10">
+            <img src="parade-route-map.png" alt="Parade Route" class="w-full max-w-2xl transition-transform duration-300" id="mapImage">
+        </div>
+    </section>
+
+    <!-- 3. Carnival Games Section -->
+    <section id="games" class="py-20">
+        <h2 class="text-3xl font-semibold text-center">Carnival Games</h2>
+        <div class="flex justify-around mt-10">
+            <div class="game-option bg-white p-4 rounded-lg shadow-lg" id="ringToss">Ring Toss</div>
+            <div class="game-option bg-white p-4 rounded-lg shadow-lg" id="dartThrow">Dart Throw</div>
+        </div>
+    </section>
+
+    <!-- 4. Photo Gallery with Dynamic Effects -->
+    <section id="gallery" class="py-20">
+        <h2 class="text-3xl font-semibold text-center">Photo Gallery</h2>
+        <div class="grid grid-cols-3 gap-4 mt-10">
+            <img src="photo1.jpg" class="hover:scale-105 transition-transform duration-300" alt="Gallery Image">
+            <img src="photo2.jpg" class="hover:scale-105 transition-transform duration-300" alt="Gallery Image">
+            <img src="photo3.jpg" class="hover:scale-105 transition-transform duration-300" alt="Gallery Image">
+        </div>
+    </section>
+
+    <!-- 5. Vendor Section with Hover Effects -->
+    <section id="vendors" class="py-20">
+        <h2 class="text-3xl font-semibold text-center">Food & Merchandise Vendors</h2>
+        <div class="flex justify-around mt-10">
+            <div class="vendor-card bg-white p-4 rounded-lg shadow-lg" id="vendor1">Vendor 1</div>
+            <div class="vendor-card bg-white p-4 rounded-lg shadow-lg" id="vendor2">Vendor 2</div>
+        </div>
+    </section>
+
+    <!-- 6. Countdown Timer -->
+    <section id="countdown" class="py-20">
+        <h2 class="text-3xl font-semibold text-center">Countdown to Carnival Day!</h2>
+        <div id="timer" class="text-2xl text-center mt-4"></div>
+    </section>
+
+    <!-- 7. "Spot the Fun" Interactive Element -->
+    <section id="spot-the-fun" class="py-20 relative">
+        <h2 class="text-3xl font-semibold text-center">Spot the Fun!</h2>
+        <div class="hidden-object" id="hiddenClown" style="top: 50%; left: 20%;">🤡</div>
+        <div class="text-center mt-4">Can you find the hidden objects?</div>
+    </section>
+
+    <!-- 8. Sound-Activated Features -->
+    <section id="sound" class="py-20 text-center">
+        <button class="bg-green-500 text-white px-4 py-2 rounded" id="toggleSound">Toggle Sound</button>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // 1. Confetti on hover
+        document.getElementById('exploreBtn').addEventListener('mouseover', function() {
+            // You can use a library like "canvas-confetti"
+            console.log("Confetti animation triggered!"); // Replace with actual confetti function
+        });
+
+        // 2. Scroll-triggered animations
+        $(window).scroll(function() {
+            $('.float-in').each(function() {
+                const topOfElement = $(this).offset().top;
+                const bottomOfScreen = $(window).scrollTop() + $(window).innerHeight();
+                if (bottomOfScreen > topOfElement) {
+                    $(this).addClass('visible');
+                }
+            });
+        });
+
+        // 3. Countdown Timer
+        const countdownDate = new Date("2024-10-12").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            document.getElementById("timer").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24)) + " Days";
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("timer").innerHTML = "Carnival Day!";
+            }
+        }, 1000);
+
+        // 4. Spot the Fun
+        $('.hidden-object').on('click', function() {
+            alert("You Found It!");
+            $(this).fadeOut(); // Hide the object after clicking
+        });
+
+        // 5. Toggle Sound
+        let soundEnabled = false;
+        document.getElementById('toggleSound').addEventListener('click', function() {
+            soundEnabled = !soundEnabled;
+            if (soundEnabled) {
+                // Play background sound
+                console.log("Sound enabled!"); // Replace with actual sound function
+            } else {
+                // Stop sound
+                console.log("Sound disabled!"); // Replace with actual sound function
+            }
+        });
+    </script>
+</body>
+</html>

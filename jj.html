@@ -1,0 +1,1080 @@
+
+<div class="carnival-hero">
+  <!-- Animated Background Elements (Floating Balloons, Confetti) -->
+  <div class="absolute inset-0 z-0 overflow-hidden" id="floating-elements">
+    <!-- Balloons -->
+    <div class="floating-balloon bg-red-400"></div>
+    <div class="floating-balloon bg-yellow-400"></div>
+    <div class="floating-balloon bg-green-400"></div>
+    <!-- Confetti -->
+    <div class="confetti-burst" id="confetti"></div>
+  </div>
+
+  <!-- Hero Section Content -->
+  <div
+    class="relative z-10 text-center flex justify-center items-center h-full"
+  >
+    <div class="leading-[2rem]">
+      <h1 class="text-6xl font-bold text-white sanimate-bounce">
+        A Day of Festivities, Fun, and Celebration
+      </h1>
+      <br />
+      <button
+        id="exploreBtn"
+        class="bg-yellow-500 hover:bg-yellow-600 text-xl text-white font-bold px-6 py-3 rounded-full shadow-lg animate-pulse"
+      >
+        Explore the Carnival
+      </button>
+    </div>
+  </div>
+
+  <!-- Character Animations (Clown and Dancer) -->
+  <div class="absolute left-4 bottom-4 z-10 animate-wiggle">
+    <img src="/clown.png" alt="Clown" class="h-32" />
+  </div>
+  <div class="absolute right-4 bottom-4 z-10 animate-dance">
+    <img src="/clown.png" alt="Dancer" class="h-32" />
+  </div>
+</div>
+
+<style>
+  /* Floating Balloons */
+  .floating-balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    animation: floatBalloon 10s infinite ease-in-out;
+    opacity: 0.8;
+  }
+
+  .floating-balloon:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+  }
+  .floating-balloon:nth-child(2) {
+    left: 50%;
+    animation-delay: 2s;
+  }
+  .floating-balloon:nth-child(3) {
+    left: 80%;
+    animation-delay: 4s;
+  }
+
+  @keyframes floatBalloon {
+    0% {
+      transform: translateY(100px);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(100px);
+    }
+  }
+
+  /* Confetti Burst Animation */
+  .confetti-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-image: url("confetti.png"); /* Add your confetti PNG */
+    background-size: cover;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease-out;
+  }
+
+  /* Animations for Characters */
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+  .animate-wiggle {
+    animation: wiggle 1s infinite;
+  }
+
+  @keyframes dance {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-dance {
+    animation: dance 1s infinite;
+  }
+</style>
+
+<style>
+  #map {
+    width: 100%;
+    height: 500px;
+    background-color: #f0f0f0; /* Light background */
+  }
+</style>
+<section id="activities" class="py-10 px-6 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-8">Key Activities</h2>
+
+  <!-- Two-column responsive layout with animation -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <!-- Card 1: Parade (Slide in from left) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity"
+      data-animate="left"
+    >
+      <h3 class="text-xl font-semibold mb-3">Parade</h3>
+      <img
+        src="/img/advance analytics.png"
+        alt="Advance analytics"
+        class="mt-4 rounded-b-xl"
+      />
+      <p class="text-gray-700">
+        Join the vibrant parade featuring cultural groups, floats, and
+        performers!
+      </p>
+      <button
+        id="parade-info-btn"
+        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >
+        View Parade Info & Map
+      </button>
+    </div>
+
+    <!-- Card 2: Dance Performances (Slide in from right) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity"
+      data-animate="right"
+    >
+      <h3 class="text-xl font-semibold mb-3">Dance Performances</h3>
+      <img
+        src="/img/advance analytics.png"
+        alt="Advance analytics"
+        class="mt-4 rounded-b-xl"
+      />
+      <p class="text-gray-700">
+        Witness amazing dance performances from different cultural groups,
+        showcasing traditional and modern styles.
+      </p>
+    </div>
+
+    <!-- Card 3: Cultural Exhibitions (Slide in from left) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity"
+      data-animate="left"
+    >
+      <h3 class="text-xl font-semibold mb-3">Cultural Exhibitions</h3>
+      <img
+        src="/img/advance analytics.png"
+        alt="Advance analytics"
+        class="mt-4 rounded-b-xl"
+      />
+      <p class="text-gray-700">
+        Explore exhibitions that display the rich cultural heritage, from
+        handcrafted artifacts to traditional clothing and customs.
+      </p>
+    </div>
+
+    <!-- Card 4: Food Stalls (Slide in from right) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity"
+      data-animate="right"
+    >
+      <h3 class="text-xl font-semibold mb-3">Food Stalls</h3>
+      <img
+        src="/img/advance analytics.png"
+        alt="Advance analytics"
+        class="mt-4 rounded-b-xl"
+      />
+      <p class="text-gray-700">
+        Taste a variety of local and international cuisines from our food
+        vendors. Enjoy delicious street food, snacks, and beverages!
+      </p>
+    </div>
+
+    <!-- Card 5: Live Music (Slide in from left) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity"
+      data-animate="left"
+    >
+      <h3 class="text-xl font-semibold mb-3">Live Music</h3>
+      <img alt="Advance analytics" class="mt-4 rounded-b-xl" />
+      <p class="text-gray-700">
+        Enjoy live music performances from local artists, bands, and DJs
+        throughout the event. There's something for every music lover!
+      </p>
+    </div>
+
+    <!-- Card 6: Art Displays (Slide in from right) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity"
+      data-animate="right"
+    >
+      <h3 class="text-xl font-semibold mb-3">Art Displays</h3>
+      <img
+        src="/img/advance analytics.png"
+        alt="Advance analytics"
+        class="mt-4 rounded-b-xl"
+      />
+      <p class="text-gray-700">
+        Admire stunning art displays featuring works from local artists.
+        Discover paintings, sculptures, and crafts.
+      </p>
+    </div>
+
+    <!-- Card 7: Games & Activities (Slide in from left, centered on desktop) -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow hidden-opacity sm:col-span-2 lg:col-span-1 lg:col-start-2"
+      data-animate="left"
+    >
+      <h3 class="text-xl font-semibold mb-3">Games & Activities</h3>
+      <img
+        src="/img/advance analytics.png"
+        alt="Advance analytics"
+        class="mt-4 rounded-b-xl"
+      />
+      <p class="text-gray-700">
+        Participate in fun games and activities for all ages. Win prizes,
+        compete in challenges, and enjoy a variety of entertainment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style></style>
+
+<!-- Modal Structure -->
+<div
+  id="mapModal"
+  class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50"
+>
+  <div
+    class="bg-white rounded-lg shadow-lg p-6 relative w-11/12 md:w-2/3 lg:w-1/2"
+  >
+    <button
+      class="close-btn absolute top-2 right-4 text-2xl text-gray-600 hover:text-gray-900"
+    >
+      &times;
+    </button>
+    <h2 class="text-2xl font-bold mb-4">Parade Route Map</h2>
+    <p class="mb-2"><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+    <p class="mb-4">
+      <strong>Route:</strong> The parade starts from Surulere and ends at
+      Mainland, passing through several key locations.
+    </p>
+    <div id="map" class="rounded-lg shadow-md"></div>
+  </div>
+</div>
+
+<section id="carnival-gallery" class="py-10 px-6 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Past carnival Photos & Videos
+  </h2>
+
+  <!-- Responsive grid layout -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+    <!-- Photo 1 -->
+    <div class="relative">
+      <img
+        src="/img/advance analytics.png"
+        alt="Carnival Photo 1"
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      />
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="relative">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Carnival Photo 2"
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      />
+    </div>
+
+    <!-- Video 1 -->
+    <div class="relative">
+      <video
+        controls
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      >
+        <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="relative">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Carnival Photo 3"
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      />
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="relative">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Carnival Photo 4"
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      />
+    </div>
+
+    <!-- Video 2 -->
+    <div class="relative">
+      <video
+        controls
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      >
+        <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Photo 5 -->
+    <div class="relative">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Carnival Photo 5"
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      />
+    </div>
+
+    <!-- Photo 6 -->
+    <div class="relative">
+      <img
+        src="https://via.placeholder.com/300x200"
+        alt="Carnival Photo 6"
+        class="w-full h-auto rounded-lg hover:opacity-75 cursor-pointer"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Merchandise and Vendors Section -->
+<section id="merchandise" class="py-10 px-6 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-8">Merchandise & Vendors</h2>
+
+  <!-- Description -->
+  <p class="text-gray-700 text-center mb-6">
+    Check out souvenir stands and local vendors offering crafts, food, and
+    unique items!
+  </p>
+
+  <!-- Featured Vendors List -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Vendor 1 -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow"
+    >
+      <h3 class="text-xl font-semibold mb-3">Craft Creations</h3>
+      <p class="text-gray-700">
+        Beautiful handcrafted items including jewelry, pottery, and more.
+      </p>
+      <a
+        href="https://craftcreations.example.com"
+        target="_blank"
+        class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >
+        Visit Website
+      </a>
+    </div>
+
+    <!-- Vendor 2 -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow"
+    >
+      <h3 class="text-xl font-semibold mb-3">Taste of the Town</h3>
+      <p class="text-gray-700">
+        Delicious local food and beverages. Try a taste of our culture!
+      </p>
+      <a
+        href="https://tasteofthetown.example.com"
+        target="_blank"
+        class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >
+        Visit Website
+      </a>
+    </div>
+
+    <!-- Vendor 3 -->
+    <div
+      class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow"
+    >
+      <h3 class="text-xl font-semibold mb-3">Local Artisans</h3>
+      <p class="text-gray-700">
+        Unique artworks and crafts from local artists and artisans.
+      </p>
+      <a
+        href="https://localartisans.example.com"
+        target="_blank"
+        class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      >
+        Visit Website
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Volunteer Opportunities Section -->
+<section id="volunteer" class="py-10 px-6 bg-gray-100">
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Volunteer Opportunities
+  </h2>
+
+  <!-- Description -->
+  <p class="text-gray-700 text-center mb-6">
+    Interested in helping organize or performing at the event? We'd love to
+    have you join us as a volunteer!
+  </p>
+
+  <!-- Call to Action (CTA) Button -->
+  <div class="flex justify-center">
+    <a
+      href="mailto:alexmfoniso18@gmail.com"
+      class="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600"
+    >
+      Sign Up to Volunteer
+    </a>
+  </div>
+</section>
+
+<!-- Lightbox Modal for Image/Video Display -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-image" class="hidden w-full h-auto" />
+  <video id="lightbox-video" controls class="hidden w-full h-auto"></video>
+</div>
+
+<!-- Leaflet.js -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Intersection Observer to trigger animations when elements come into view
+  const cards = document.querySelectorAll(".hidden-opacity");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const animationType = entry.target.getAttribute("data-animate");
+          entry.target.classList.remove("hidden-opacity");
+          if (animationType === "left") {
+            entry.target.classList.add("slide-in-left");
+          } else if (animationType === "right") {
+            entry.target.classList.add("slide-in-right");
+          }
+          observer.unobserve(entry.target); // Unobserve once animation has run
+        }
+      });
+    },
+    { threshold: 0.2 }
+  ); // Trigger animation when 20% of the card is in view
+
+  // Observe each card
+  cards.forEach((card) => observer.observe(card));
+
+  // Initialize the map
+  var map = L.map("map", {
+    zoomControl: false, // Disable zoom control
+    dragging: false, // Disable map dragging
+    scrollWheelZoom: false, // Disable zoom with scroll
+    doubleClickZoom: false, // Disable double click zoom
+  }).setView([6.5, 3.36], 13); // Center around Lagos
+
+  // Set the tile layer from OpenStreetMap
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Define the parade route (example coordinates)
+  var paradeRouteCoordinates = [
+    [6.499, 3.35], // Starting Point (Surulere)
+    [6.5, 3.355],
+    [6.503, 3.36],
+    [6.51, 3.37],
+    [6.52, 3.375], // Ending Point (Mainland)
+  ];
+
+  // Create the parade route as a polyline and add it to the map
+  var paradeRoute = L.polyline(paradeRouteCoordinates, {
+    color: "blue",
+    weight: 5,
+  }).addTo(map);
+
+  // Add markers for the start and end points with red icons
+  var startMarker = L.circleMarker([6.499, 3.35], {
+    radius: 8,
+    color: "red",
+    fillColor: "#f03",
+    fillOpacity: 1,
+  })
+    .addTo(map)
+    .bindPopup("Start: Surulere");
+
+  var endMarker = L.circleMarker([6.52, 3.375], {
+    radius: 8,
+    color: "red",
+    fillColor: "#f03",
+    fillOpacity: 1,
+  })
+    .addTo(map)
+    .bindPopup("End: Mainland");
+
+  // Adjust map bounds to fit the route
+  map.fitBounds(paradeRoute.getBounds());
+
+  // Handle Modal Pop-up for Parade Info & Map
+  document
+    .getElementById("view-parade-info")
+    .addEventListener("click", function () {
+      // Displaying map functionality could be handled here for a modal.
+      alert(
+        "Parade starts from Surulere to Mainland. Route is now visible!"
+      );
+    });
+
+  // Handle the lightbox functionality
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxVideo = document.getElementById("lightbox-video");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  // Open lightbox for image or video
+  document.querySelectorAll(".cursor-pointer").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      if (event.target.tagName.toLowerCase() === "img") {
+        const src = event.target.src;
+        lightboxImage.src = src; // Set the clicked image source to the lightbox image
+        lightboxImage.classList.remove("hidden");
+        lightboxVideo.classList.add("hidden");
+      } else if (event.target.tagName.toLowerCase() === "video") {
+        const videoSource = event.target.querySelector("source").src;
+        lightboxVideo.src = videoSource; // Set the clicked video source to the lightbox video
+        lightboxVideo.classList.remove("hidden");
+        lightboxImage.classList.add("hidden");
+      }
+
+      lightbox.classList.add("visible");
+    });
+  });
+
+  // Close lightbox
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("visible");
+    lightboxImage.src = "";
+    lightboxVideo.src = "";
+  });
+</script>
+
+<!-- <div
+  class="min-h-screen bg-gradient-to-r from-pink-300 via-yellow-200 to-purple-300 py-10"
+> -->
+<!-- <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+    <h2 class="text-4xl font-bold text-center mb-6">Virtual Photo Booth</h2> -->
+
+<!-- Upload Photo Section -->
+<!-- <div class="flex flex-col items-center mb-6">
+      <label
+        for="photoUpload"
+        class="cursor-pointer bg-pink-500 text-white px-6 py-3 rounded-full mb-4 hover:bg-pink-400"
+      >
+        Upload Your Photo
+      </label>
+      <input
+        id="photoUpload"
+        type="file"
+        accept="image/*"
+        class="hidden"
+        onchange="previewImage(event)"
+      />
+      <img
+        id="photoPreview"
+        src=""
+        alt="Uploaded photo"
+        class="w-64 h-64 object-cover rounded-lg shadow-lg hidden"
+      />
+    </div> -->
+
+<!-- Filters Section -->
+<!-- <div class="text-center mb-6">
+      <h3 class="text-2xl font-semibold mb-4">
+        Choose Your Carnival Filter
+      </h3>
+      <div class="flex justify-center space-x-4">
+        <button
+          onclick="applyFilter('confetti')"
+          class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-400"
+        >
+          Confetti
+        </button>
+        <button
+          onclick="applyFilter('clown-hat')"
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-400"
+        >
+          Clown Hat
+        </button>
+        <button
+          onclick="applyFilter('mask')"
+          class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-400"
+        >
+          Mask
+        </button>
+      </div>
+    </div> -->
+
+<!-- Save & Share Section -->
+<!-- <div class="text-center">
+      <button
+        onclick="saveImage()"
+        class="bg-purple-500 text-white px-6 py-3 rounded-full hover:bg-purple-400"
+      >
+        Save & Share
+      </button>
+      <p class="mt-4 text-gray-600">
+        Share with #FantyCarnival on Social Media!
+      </p>
+    </div> -->
+
+<!-- Canvas for editing the photo -->
+<!-- <canvas id="photoCanvas" class="hidden"></canvas> -->
+<!-- </div>
+</div> -->
+<!-- 
+<div
+  class="min-h-screen bg-gradient-to-r from-blue-300 via-pink-200 to-yellow-300 py-10"
+>
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
+    <h2 class="text-4xl font-bold text-center mb-6">
+      Balloon Pop Carnival Game
+    </h2> -->
+
+<style>
+  #balloonGameCanvas {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    touch-action: none; /* Disable default touch actions */
+    width: 100%; /* Make canvas responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 800px; /* Limit max width */
+    max-height: 400px; /* Limit max height */
+  }
+
+  /* Balloons Animation */
+  @keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  .balloon {
+    animation: pop 0.2s ease-out forwards; /* Popping animation */
+  }
+</style>
+<div class="flex justify-center mb-6">
+  <p
+    class="text-3xl font-bold text-white bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4 rounded-lg shadow-lg text-center"
+  >
+    Let's play some games together!
+  </p>
+</div>
+
+<div class="container mx-auto p-6">
+  <!-- Game Info Section -->
+  <div class="flex flex-col md:flex-row justify-between mb-6">
+    <div>
+      <p class="text-2xl">
+        Current Score: <span id="currentScore">0</span>
+      </p>
+      <p class="text-xl">High Score: <span id="highScore">0</span></p>
+    </div>
+    <div class="mt-4 md:mt-0">
+      <button
+        onclick="resetGame()"
+        class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-400"
+      >
+        Reset Game
+      </button>
+    </div>
+  </div>
+
+  <div class="container mx-auto p-6">
+    <!-- Game Info Section -->
+    <div class="flex flex-col md:flex-row justify-between mb-6">
+      <div>
+        <p class="text-2xl">
+          Current Score: <span id="currentScore">0</span>
+        </p>
+        <p class="text-xl">High Score: <span id="highScore">0</span></p>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <button
+          onclick="resetGame()"
+          class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-400"
+        >
+          Reset Game
+        </button>
+      </div>
+    </div>
+
+    <!-- Difficulty Level Selector -->
+    <div class="mb-6">
+      <label for="difficulty" class="text-xl">Difficulty:</label>
+      <select
+        id="difficulty"
+        class="ml-4 bg-white border border-gray-300 p-2 rounded-lg"
+        onchange="setDifficulty()"
+      >
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <!-- Game Area (Canvas) -->
+    <div class="flex justify-center">
+      <canvas
+        id="balloonGameCanvas"
+        class="border border-gray-300"
+      ></canvas>
+    </div>
+
+    <!-- Instructions -->
+    <p class="text-center mt-6 text-gray-600">
+      Click or tap on the balloons to pop them and earn points!
+    </p>
+  </div>
+</div>
+</body>
+<script>
+const canvas = document.getElementById("balloonGameCanvas");
+const ctx = canvas.getContext("2d");
+let balloons = [];
+let score = 0;
+let highScore = 0;
+let balloonInterval;
+let speed = 2;
+let gameRunning = false;
+
+// Initialize game
+function startGame() {
+  score = 0;
+  document.getElementById("currentScore").innerText = score;
+  balloons = [];
+  if (!gameRunning) {
+    gameRunning = true;
+    gameLoop();
+    balloonInterval = setInterval(addBalloon, 1000); // Add a new balloon every second
+  }
+}
+
+// Reset Game
+function resetGame() {
+  clearInterval(balloonInterval);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  startGame();
+}
+
+// Add new balloon
+function addBalloon() {
+  const radius = Math.random() * 30 + 20; // Random balloon size
+  const x = Math.random() * (canvas.width - radius * 2) + radius; // Random position
+  balloons.push(new Balloon(x, canvas.height, radius, speed));
+}
+
+// Handle popping balloons on canvas click or touch
+function handlePop(mouseX, mouseY) {
+  balloons.forEach((balloon, index) => {
+    if (balloon.isPopped(mouseX, mouseY)) {
+      balloons.splice(index, 1); // Remove the popped balloon
+      score++;
+      document.getElementById("currentScore").innerText = score;
+
+      // Update high score
+      if (score > highScore) {
+        highScore = score;
+        document.getElementById("highScore").innerText = highScore;
+      }
+      // Play sound effect here (if any)
+    }
+  });
+}
+
+// Mouse click event
+canvas.addEventListener("click", (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const mouseY = e.clientY - rect.top;
+  handlePop(mouseX, mouseY);
+});
+
+// Touch event for mobile devices
+canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // Prevent default touch actions
+  const rect = canvas.getBoundingClientRect();
+  const touchX = e.touches[0].clientX - rect.left;
+  const touchY = e.touches[0].clientY - rect.top;
+  handlePop(touchX, touchY);
+});
+
+// Set difficulty
+function setDifficulty() {
+  const difficulty = document.getElementById("difficulty").value;
+  if (difficulty === "easy") {
+    speed = 2;
+  } else if (difficulty === "medium") {
+    speed = 4;
+  } else if (difficulty === "hard") {
+    speed = 6;
+  }
+}
+
+// Main game loop
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  balloons.forEach((balloon, index) => {
+    balloon.update();
+    balloon.draw(ctx); // Pass context to draw method
+
+    // Remove balloon if it goes off-screen
+    if (balloon.y + balloon.radius < 0) {
+      balloons.splice(index, 1);
+    }
+  });
+
+  if (gameRunning) {
+    requestAnimationFrame(gameLoop);
+  }
+}
+
+// Balloon class
+class Balloon {
+  constructor(x, y, radius, speed) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.speed = speed;
+  }
+
+  draw(ctx) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.getRandomColor();
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  update() {
+    this.y -= this.speed; // Move balloon up
+  }
+
+  isPopped(mouseX, mouseY) {
+    const dist = Math.sqrt((mouseX - this.x) ** 2 + (mouseY - this.y) ** 2);
+    if (dist < this.radius) {
+      this.drawPopAnimation();
+      return true;
+    }
+    return false;
+  }
+
+  drawPopAnimation() {
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.scale(1.5, 1.5); // Slightly enlarge the balloon on pop
+    ctx.fillStyle = "transparent"; // Hide the balloon after pop
+    ctx.fill();
+    ctx.restore();
+  }
+
+  getRandomColor() {
+    const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#FFC300"];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+}
+
+// Start game on page load
+window.onload = function () {
+  startGame();
+};
+
+// Get the button element
+const exploreBtn = document.getElementById("exploreBtn");
+
+// Add an event listener to the button
+exploreBtn.addEventListener("click", () => {
+  // Get the current scroll position
+  const currentScroll = window.scrollY;
+
+  // Scroll the page down by 200 pixels with smooth animation
+  window.scrollTo({ top: currentScroll + 200, behavior: "smooth" });
+});
+
+const filters = {
+  confetti: "/confetti-filter.png",
+  "clown-hat": "/clown-hat-filter.png",
+  mask: "/mask-filter.png",
+};
+let currentFilter = null;
+
+// Preview uploaded photo
+function previewImage(event) {
+  const reader = new FileReader();
+  reader.onload = function () {
+    const img = document.getElementById("photoPreview");
+    img.src = reader.result;
+    img.classList.remove("hidden");
+    document.getElementById("photoCanvas").classList.remove("hidden");
+  };
+  reader.readAsDataURL(event.target.files[0]);
+}
+
+// Apply carnival filter
+function applyFilter(filterName) {
+  currentFilter = filters[filterName];
+  const img = document.getElementById("photoPreview");
+  const canvas = document.getElementById("photoCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Load the uploaded image into the canvas
+  const photo = new Image();
+  photo.src = img.src;
+  photo.onload = function () {
+    canvas.width = photo.width;
+    canvas.height = photo.height;
+    ctx.drawImage(photo, 0, 0);
+
+    // Load the selected filter image and draw it on the canvas
+    if (currentFilter) {
+      const filter = new Image();
+      filter.src = currentFilter;
+      filter.onload = function () {
+        ctx.drawImage(filter, 0, 0, canvas.width, canvas.height);
+      };
+    }
+  };
+}
+
+// Save the edited photo
+function saveImage() {
+  const canvas = document.getElementById("photoCanvas");
+  const link = document.createElement("a");
+  link.download = "FantyCarnivalPhoto.png";
+  link.href = canvas.toDataURL();
+  link.click();
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style>
+  .carnival-hero {
+    background-image: url("/img/carnival-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    border-radius: 10px;
+  }
+
+  /* Slide in from left */
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Slide in from right */
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 1s ease-in-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 1s ease-in-out forwards;
+  }
+
+  /* Hide element initially */
+  .hidden-opacity {
+    opacity: 0;
+  }
+
+  /* Lightbox styles */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .lightbox.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .lightbox img,
+  .lightbox video {
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+</style>

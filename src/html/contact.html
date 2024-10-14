@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      @keyframes fade-in-up {
+        0% {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .fade-in-up {
+        animation: fade-in-up 0.8s ease-out forwards;
+        opacity: 0;
+      }
+         /* Accordion Transition */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+      /* padding: 0 1rem; */
+    }
+    .accordion-content.open {
+      padding-top: 1rem;
+      /* padding-bottom: 1rem; */
+    }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 font-sans">
+    <!-- Header -->
+
+    <!-- Header -->
+    <header class="bg-[#9075FF] text-white">
+      <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Logo -->
+        <div class="text-3xl font-bold">
+          <a href="#">
+            <img src="/img/logo.png" alt="Logo" class="h-10" />
+          </a>
+        </div>
+
+        <!-- Links for desktop -->
+        <nav class="hidden lg:flex space-x-8 items-center">
+          <a href="#" class="hover:text-gray-300">About</a>
+          <div class="relative group">
+            <!-- Event dropdown for desktop -->
+            <button class="flex items-center space-x-1 hover:text-gray-300">
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
+            >
+            <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              >Music Concert</a
+            >
+            <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
+              >Symposium/Personalities</a
+            >
+            <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              >Music and concert</a
+            >
+            <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              >Fashion Fest</a
+            >
+            <a
+              href="/src/html/carnival.html"
+              class="block px-4 py-2 hover:bg-indigo-100"
+              >Carnival</a
+            >
+            <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              >Football and games
+            </a>
+            <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              >Book launch and awards
+            </a>
+            </div>
+          </div>
+          <a href="#" class="hover:text-gray-300">Resource</a>
+          <a href="#" class="hover:text-gray-300">Sponsors</a>
+          <a href="#" class="hover:text-gray-300">Contact</a>
+        </nav>
+
+        <!-- Hamburger icon for mobile -->
+        <div class="lg:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+      >
+        <nav class="flex flex-col space-y-2 p-4 text-white">
+          <a href="#" class="hover:text-gray-300">About</a>
+          <!-- Event dropdown always visible for mobile -->
+          <div class="relative">
+            <div
+              class="flex justify-between items-center w-full text-left hover:text-gray-300"
+            >
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <!-- Dropdown always visible in mobile -->
+            <div class="flex flex-col space-y-1 pl-4 mt-2">
+              <a href="#" class="hover:text-gray-300">Football</a>
+              <a href="#" class="hover:text-gray-300">Basketball</a>
+              <a href="#" class="hover:text-gray-300">Table Tennis</a>
+              <a href="#" class="hover:text-gray-300">Relay Race</a>
+              <a href="#" class="hover:text-gray-300">Volleyball</a>
+            </div>
+          </div>
+          <a href="#" class="hover:text-gray-300">Resource</a>
+          <a href="#" class="hover:text-gray-300">Sponsors</a>
+          <a href="#" class="hover:text-gray-300">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      // Toggle the mobile menu
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.maxHeight;
+        if (!isOpen || mobileMenu.style.maxHeight === "0px") {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        } else {
+          mobileMenu.style.maxHeight = "0px";
+        }
+      });
+    </script>
+
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-indigo-700 to-purple-600 text-white p-12 text-center"
+    >
+      <h1 class="text-5xl font-extrabold fade-in-up">Get in Touch</h1>
+      <p class="mt-4 text-xl fade-in-up">Have questions? We're here to help!</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section
+      class="p-8 mt-10 bg-white shadow-lg rounded-lg container mx-auto fade-in-up"
+    >
+      <h2 class="text-4xl font-bold text-indigo-700 text-center">
+        Contact Form
+      </h2>
+      <form class="mt-8 max-w-lg mx-auto">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="w-full p-3 border border-gray-300 rounded mt-2"
+            placeholder="Your Name"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="w-full p-3 border border-gray-300 rounded mt-2"
+            placeholder="Your Email"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            class="w-full p-3 border border-gray-300 rounded mt-2"
+            placeholder="Your Message"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 text-white py-3 mt-4 rounded-full hover:bg-indigo-700 shadow-md"
+        >
+          Send Message
+        </button>
+      </form>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="container mx-auto p-8 mt-12 bg-white shadow-lg rounded-lg">
+        <h2 class="text-4xl font-bold text-indigo-700 text-center mb-8">Follow Us</h2>
+        
+        <div class="flex justify-center space-x-4 mb-8">
+          <a href="#" class="text-indigo-600 text-2xl hover:scale-110 transition-transform">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-blue-400 text-2xl hover:scale-110 transition-transform">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-pink-500 text-2xl hover:scale-110 transition-transform">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-blue-600 text-2xl hover:scale-110 transition-transform">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+    
+    </section>
+    <!-- Modern FAQ Accordion Section -->
+  <!-- FAQ Container -->
+   <section class="flex items-center justify-center min-h-screen ">
+  <div class="w-full max-w-3xl px-6 py-12">
+    <h1 class="text-4xl font-bold text-center mb-10">Frequently Asked Questions</h1>
+
+    <!-- FAQ Items -->
+    <div class="faq-item border border-gray-300 rounded-lg mb-4 cursor-pointer">
+      <div class="faq-header flex justify-between items-center p-4">
+        <h2 class="text-lg font-medium">Question 1</h2>
+        <i class="fas fa-angle-down faq-icon transition-transform duration-300"></i>
+      </div>
+      <div class="faq-answer max-h-0 overflow-hidden text-justify transition-all duration-500 px-4 pb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione cumque ducimus, sed facere aut recusandae ullam numquam illum repudiandae?
+      </div>
+    </div>
+
+    <div class="faq-item border border-gray-300 rounded-lg mb-4 cursor-pointer">
+      <div class="faq-header flex justify-between items-center p-4">
+        <h2 class="text-lg font-medium">Question 2</h2>
+        <i class="fas fa-angle-down faq-icon transition-transform duration-300"></i>
+      </div>
+      <div class="faq-answer max-h-0 overflow-hidden text-justify transition-all duration-500 px-4 pb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, similique facere. Consequatur quos possimus unde illo ullam fugiat odio, deleniti dicta ad voluptatibus inventore quibusdam.
+      </div>
+    </div>
+
+    <div class="faq-item border border-gray-300 rounded-lg cursor-pointer">
+      <div class="faq-header flex justify-between items-center p-4">
+        <h2 class="text-lg font-medium">Question 3</h2>
+        <i class="fas fa-angle-down faq-icon transition-transform duration-300"></i>
+      </div>
+      <div class="faq-answer max-h-0 overflow-hidden text-justify transition-all duration-500 px-4 pb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis neque, ab quaerat illum sint enim minima perspiciatis nostrum, tempora.
+      </div>
+    </div>
+  </div>
+
+</section>
+  </section>
+
+
+  </section>
+
+    <!-- Google Map Section -->
+    <section
+      class="p-8 mt-10 bg-gradient-to-r from-indigo-700 to-purple-700 text-white"
+    >
+      <h2 class="text-4xl font-bold text-center">Find Us Here</h2>
+      <div class="mt-8 flex justify-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509371!2d144.95373631558937!3d-37.81627977975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1fddf57%3A0x2e8d6f50d9f1a5e0!2sSurulere+Sports+Arena!5e0!3m2!1sen!2sng!4v1600477888035!5m2!1sen!2sng"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+      </div>
+    </section>
+
+    <script>
+      // Scroll Animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-up");
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      document
+        .querySelectorAll(".fade-in-up")
+        .forEach((el) => observer.observe(el));
+
+
+    // Modern Accordion Functionality with Icon Toggle
+  
+    const faqs = document.querySelectorAll('.faq-item');
+
+    faqs.forEach(faq => {
+      const header = faq.querySelector('.faq-header');
+      const answer = faq.querySelector('.faq-answer');
+      const icon = faq.querySelector('.faq-icon');
+
+      header.addEventListener('click', () => {
+        // Close other open FAQs
+        faqs.forEach(item => {
+          if (item !== faq) {
+            item.querySelector('.faq-answer').style.maxHeight = '0';
+            item.querySelector('.faq-icon').classList.remove('rotate-180');
+          }
+        });
+
+        // Toggle the clicked FAQ
+        const isExpanded = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+        answer.style.maxHeight = isExpanded ? '0' : answer.scrollHeight + 'px';
+        icon.classList.toggle('rotate-180', !isExpanded);
+      });
+    });
+        </script>
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

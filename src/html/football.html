@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football & Other Games</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-bg {
+        background-image: url("/src/img/football.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Card Hover Animation */
+      .hover-tilt:hover {
+        transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+        transition: transform 0.7s ease;
+      }
+
+      /* Image Hover Animation */
+      .card-img {
+        transition: transform 0.7s ease, margin 0.7s ease;
+      }
+
+      .hover-tilt:hover .card-img {
+        transform: scale(1.2);
+        margin-top: -10px; /* Moves image up slightly */
+      }
+
+      /* Additional card styling */
+      .card {
+        overflow: hidden; /* Ensures overflow is hidden on cards */
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-[#e9e8e8] text-black">
+      <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Logo -->
+        <div class="text-3xl font-bold">
+          <a href="#">
+            <img src="/img/logo.png" alt="Logo" class="h-10" />
+          </a>
+        </div>
+
+        <!-- Links for desktop -->
+        <nav class="hidden lg:flex space-x-8 items-center">
+          <a href="#" class="hover:text-gray-300">About</a>
+          <div class="relative group">
+            <!-- Event dropdown for desktop -->
+            <button class="flex items-center space-x-1 hover:text-gray-300">
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music Concert</a
+              >
+              <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Symposium/Personalities</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music and concert</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Fashion Fest</a
+              >
+              <a
+                href="/src/html/carnival.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
+                >Carnival</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Football and games
+              </a>
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Book launch and awards
+              </a>
+            </div>
+          </div>
+          <a href="#" class="hover:text-gray-300">Resource</a>
+          <a href="#" class="hover:text-gray-300">Sponsors</a>
+          <a href="#" class="hover:text-gray-300">Contact</a>
+        </nav>
+
+        <!-- Hamburger icon for mobile -->
+        <div class="lg:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+      >
+        <nav class="flex flex-col space-y-2 p-4 text-white">
+          <a href="#" class="hover:text-gray-300">About</a>
+          <!-- Event dropdown always visible for mobile -->
+          <div class="relative">
+            <div
+              class="flex justify-between items-center w-full text-left hover:text-gray-300"
+            >
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <!-- Dropdown always visible in mobile -->
+            <div class="flex flex-col space-y-1 pl-4 mt-2">
+              <a href="#" class="block px-4 py-2">Music Concert</a>
+              <a href="/jj.html" class="block px-4 py-2"
+                >Symposium/Personalities</a
+              >
+              <a href="#" class="block px-4 py-2">Music and concert</a>
+              <a href="#" class="block px-4 py-2">Fashion Fest</a>
+              <a href="/src/html/carnival.html" class="block px-4 py-2"
+                >Carnival</a
+              >
+              <a href="#" class="block px-4 py-2">Football and games </a>
+              <a href="#" class="block px-4 py-2">Book launch and awards </a>
+            </div>
+          </div>
+          <a href="#" class="hover:text-gray-300">Resource</a>
+          <a href="/src/html/snow.html" class="hover:text-gray-300">Sponsors</a>
+          <a href="/src/html/contact.html" class="hover:text-gray-300"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      // Toggle the mobile menu
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.maxHeight;
+        if (!isOpen || mobileMenu.style.maxHeight === "0px") {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        } else {
+          mobileMenu.style.maxHeight = "0px";
+        }
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-[80vh] flex items-center justify-center">
+      <div
+        class="text-center text-white p-8 bg-black bg-opacity-50 rounded-lg"
+        data-aos="fade-up"
+      >
+        <h1 class="text-5xl font-bold mb-6">
+          Football & Other Sports Festival
+        </h1>
+        <p class="text-xl mb-4">
+          Join us for a celebration of sports, competition, and community
+          spirit!
+        </p>
+        <a
+          href="#about"
+          class="bg-blue-500 px-6 py-3 text-white font-semibold rounded-lg hover:bg-blue-600 transition"
+        >
+          Learn More
+        </a>
+      </div>
+    </header>
+
+    <!-- About the Event -->
+    <section id="about" class="py-16 bg-white" data-aos="fade-up">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">About the Games</h2>
+        <p class="text-lg text-center mb-12">
+          The Football & Other Games Festival promotes community, healthy
+          living, and the joy of competition. It is a celebration of teamwork,
+          athletic excellence, and friendship.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <img
+            src="/src/img/sport.jpg"
+            class="rounded-lg shadow-md"
+            alt="Football Image"
+          />
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-4">Objectives of the Event</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Encourage youth engagement through sports</li>
+              <li>Promote a healthy and active lifestyle</li>
+              <li>Build community spirit through fun activities</li>
+              <li>Recognize talents with rewards and prizes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Football Tournament Section -->
+    <section class="py-16 bg-[#FFD19B]" data-aos="fade-right">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">
+          The Football Tournament
+        </h2>
+        <p class="text-lg text-center mb-10">
+          The highlight of the event is the football tournament, with teams
+          battling it out for glory. All are welcome—amateurs or
+          professionals—to show their skills!
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Tournament Highlights</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Exciting knockout stages leading to the finals</li>
+              <li>Live commentary and entertainment</li>
+              <li>Grand prizes for winning teams</li>
+              <li>Cheerleader performances and halftime shows</li>
+            </ul>
+          </div>
+          <img
+            src="/src/img/Player.jpg"
+            class="rounded-lg shadow-md"
+            alt="Football Crowd"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Games Section -->
+    <section class="py-16 bg-white" data-aos="fade-left">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">Explore Other Games</h2>
+        <p class="text-lg text-center mb-12">
+          Apart from football, the festival offers a variety of games and sports
+          for everyone! Whether you prefer basketball, table tennis, or relay
+          races, there’s something to enjoy.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md text-center hover-tilt card"
+          >
+            <img
+              src="/src/img/basketball.jpg"
+              alt="Basketball"
+              class="rounded-md mb-4 card-img"
+            />
+            <h3 class="text-xl font-semibold mb-2">Basketball</h3>
+            <p>
+              Dribble your way to victory in our exciting basketball matches.
+            </p>
+          </div>
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md text-center hover-tilt card"
+          >
+            <img
+              src="/src/img/table tenis.jpg"
+              alt="Table Tennis"
+              class="rounded-md mb-4 card-img"
+            />
+            <h3 class="text-xl font-semibold mb-2">Table Tennis</h3>
+            <p>Enjoy thrilling duels in ping-pong with friends and rivals.</p>
+          </div>
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md text-center hover-tilt card"
+          >
+            <img
+              src="/src/img/relay.jpg"
+              alt="Track & Field"
+              class="rounded-md mb-4 card-img"
+            />
+            <h3 class="text-xl font-semibold mb-2">Track & Field</h3>
+            <p>Join us for races, relays, and other athletic challenges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-12 bg-indigo-700 text-white" data-aos="fade-in">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">See You There!</h2>
+        <p class="mb-6">
+          We can’t wait to see you at the festival. Stay tuned for more updates!
+        </p>
+        <p class="font-semibold">
+          Follow us on social media for the latest news.
+        </p>
+      </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

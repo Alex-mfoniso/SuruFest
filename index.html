@@ -172,54 +172,160 @@
 
   <body class="font-[Poppins] bg-[#F7F7FC] h-screen">
     <div>
-      <header class="bg-white">
-        <nav class="flex justify-between items-center w-[92%] mx-auto">
-          <div>
-            <img
-              class="w-[5rem] cursor-pointer"
-              src="./img/logo.png"
-              alt="..."
-            />
+      <!-- Header -->
+      <header class="bg-indigo-700 text-white">
+        <div class="container mx-auto flex justify-between items-center p-5">
+          <!-- Logo -->
+          <div class="text-3xl font-bold">
+            <a href="#">
+              <img
+                src="https://via.placeholder.com/120x50"
+                alt="Logo"
+                class="h-10"
+              />
+            </a>
           </div>
-          <div
-            class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
-          >
-            <ul
-              class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8"
-            >
-              <li>
-                <a class="hover:text-gray-500" href="">About</a>
-              </li>
-              <li>
-                <a class="hover:text-gray-500" href="#">Event</a>
-              </li>
-              <li>
-                <a class="hover:text-gray-500" href="./src/html/carnival.html"
-                  >Resource</a
+
+          <!-- Links for desktop -->
+          <nav class="hidden lg:flex space-x-8 items-center">
+            <a href="#" class="hover:text-gray-300">About</a>
+            <div class="relative group">
+              <!-- Event dropdown for desktop -->
+              <button class="flex items-center space-x-1 hover:text-gray-300">
+                <span>Event</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-              </li>
-              <li>
-                <a class="hover:text-gray-500" href="#">Sponsors</a>
-              </li>
-              <li>
-                <a class="hover:text-gray-500" href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex items-center gap-6">
-            <button
-              class="invisible bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
-            >
-              Sign in
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
+              >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Music Concert</a
+                >
+                <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Symposium/Personalities</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Music and concert</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Fashion Fest</a
+                >
+                <a
+                  href="/src/html/carnival.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
+                  >Carnival</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Football and games
+                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Book launch and awards
+                </a>
+              </div>
+            </div>
+            <a href="#" class="hover:text-gray-300">Resource</a>
+            <a href="#" class="hover:text-gray-300">Sponsors</a>
+            <a href="#" class="hover:text-gray-300">Contact</a>
+          </nav>
+
+          <!-- Hamburger icon for mobile -->
+          <div class="lg:hidden">
+            <button id="menu-toggle" class="focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
             </button>
-            <ion-icon
-              onclick="onToggleMenu(this)"
-              name="menu"
-              class="text-3xl cursor-pointer md:hidden"
-            ></ion-icon>
           </div>
-        </nav>
+        </div>
+
+        <!-- Mobile menu -->
+        <div
+          id="mobile-menu"
+          class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+        >
+          <nav class="flex flex-col space-y-2 p-4 text-white">
+            <a href="#" class="hover:text-gray-300">About</a>
+            <!-- Event dropdown always visible for mobile -->
+            <div class="relative">
+              <div
+                class="flex justify-between items-center w-full text-left hover:text-gray-300"
+              >
+                <span>Event</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+              <!-- Dropdown always visible in mobile -->
+              <div class="flex flex-col space-y-1 pl-4 mt-2">
+                <a href="#" class="block px-4 py-2">Music Concert</a>
+                <a href="/jj.html" class="block px-4 py-2"
+                  >Symposium/Personalities</a
+                >
+              
+                <a href="#" class="block px-4 py-2">Fashion Fest</a>
+                <a href="/src/html/carnival.html" class="block px-4 py-2"
+                  >Carnival</a
+                >
+                <a href="#" class="block px-4 py-2">Football and games </a>
+                <a href="#" class="block px-4 py-2">Book launch and awards </a>
+              </div>
+            </div>
+            <a href="#" class="hover:text-gray-300">Resource</a>
+            <a href="/src/html/snow.html" class="hover:text-gray-300">Sponsors</a>
+            <a href="/src/html/contact.html" class="hover:text-gray-300"
+              >Contact</a
+            >
+          </nav>
+        </div>
       </header>
+
+      <script>
+        // Toggle the mobile menu
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileMenu.style.maxHeight;
+          if (!isOpen || mobileMenu.style.maxHeight === "0px") {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          } else {
+            mobileMenu.style.maxHeight = "0px";
+          }
+        });
+      </script>
+
 
       <section
         aria-label="Newest Photos"

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Launch & Awards</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-bg {
+        background-image: url("/src/img/art.jpg"); /* Add your background image */
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Card Hover Animation */
+      .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Text Animation */
+      .fade-in {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .fade-in.show {
+        opacity: 1;
+      }
+
+      /* Bio Popup Animation */
+      .bio-popup {
+        display: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .bio-popup.show {
+        display: block;
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-[#e9e8e8] text-black">
+      <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Logo -->
+        <div class="text-3xl font-bold">
+          <a href="#">
+            <img src="/img/logo.png" alt="Logo" class="h-10" />
+          </a>
+        </div>
+
+        <!-- Links for desktop -->
+        <nav class="hidden lg:flex space-x-8 items-center">
+          <a href="#" class="hover:text-gray-300">About</a>
+          <div class="relative group">
+            <!-- Event dropdown for desktop -->
+            <button class="flex items-center space-x-1 hover:text-gray-300">
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music Concert</a
+              >
+              <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Symposium/Personalities</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music and concert</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Fashion Fest</a
+              >
+              <a
+                href="/src/html/carnival.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
+                >Carnival</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Football and games
+              </a>
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Book launch and awards
+              </a>
+            </div>
+          </div>
+          <a href="#" class="hover:text-gray-300">Resource</a>
+          <a href="#" class="hover:text-gray-300">Sponsors</a>
+          <a href="#" class="hover:text-gray-300">Contact</a>
+        </nav>
+
+        <!-- Hamburger icon for mobile -->
+        <div class="lg:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+      >
+        <nav class="flex flex-col space-y-2 p-4 text-white">
+          <a href="#" class="hover:text-gray-300">About</a>
+          <!-- Event dropdown always visible for mobile -->
+          <div class="relative">
+            <div
+              class="flex justify-between items-center w-full text-left hover:text-gray-300"
+            >
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <!-- Dropdown always visible in mobile -->
+            <div class="flex flex-col space-y-1 pl-4 mt-2">
+              <a href="#" class="block px-4 py-2">Music Concert</a>
+              <a href="/jj.html" class="block px-4 py-2"
+                >Symposium/Personalities</a
+              >
+              <a href="#" class="block px-4 py-2">Music and concert</a>
+              <a href="#" class="block px-4 py-2">Fashion Fest</a>
+              <a href="/src/html/carnival.html" class="block px-4 py-2"
+                >Carnival</a
+              >
+              <a href="#" class="block px-4 py-2">Football and games </a>
+              <a href="#" class="block px-4 py-2">Book launch and awards </a>
+            </div>
+          </div>
+          <a href="#" class="hover:text-gray-300">Resource</a>
+          <a href="/src/html/snow.html" class="hover:text-gray-300">Sponsors</a>
+          <a href="/src/html/contact.html" class="hover:text-gray-300"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      // Toggle the mobile menu
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.maxHeight;
+        if (!isOpen || mobileMenu.style.maxHeight === "0px") {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        } else {
+          mobileMenu.style.maxHeight = "0px";
+        }
+      });
+    </script>
+    <!-- Hero Section -->
+    <header class="hero-bg h-[80vh] flex items-center justify-center">
+      <div
+        class="text-center text-white p-8 bg-black bg-opacity-50 rounded-lg"
+        data-aos="fade-up"
+      >
+        <h1 class="text-5xl font-bold mb-6">
+          Celebrating Excellence in Literature and the Arts
+        </h1>
+        <p class="text-xl mb-4">
+          Join us for an inspiring evening of book launches and awards!
+        </p>
+        <a
+          href="#launch-details"
+          class="bg-blue-500 px-6 py-3 text-white font-semibold rounded-lg hover:bg-blue-600 transition"
+        >
+          Learn More
+        </a>
+      </div>
+    </header>
+
+    <!-- Book Launch Details -->
+    <section id="launch-details" class="py-16 bg-white" data-aos="fade-up">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">Book Launch Details</h2>
+        <p class="text-lg text-center mb-12">
+          We are excited to launch the following books that celebrate creativity
+          and storytelling.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Featured Book: "The Journey Within"
+            </h3>
+            <p class="mb-4">Author: Jane Doe</p>
+            <p>Genre: Inspirational Fiction</p>
+          </div>
+          <img
+            src="/src/img/book.jpg"
+            class="rounded-lg shadow-md"
+            alt="Book Image"
+          />
+        </div>
+        <div class="mt-12">
+          <h3 class="text-2xl font-semibold mb-4">About the Author</h3>
+          <p>
+            Jane Doe is a renowned author known for her captivating storytelling
+            and ability to inspire readers through her works.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Award Categories -->
+    <section class="py-16 bg-[#FFD19B]" data-aos="fade-right">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">Award Categories</h2>
+        <p class="text-lg text-center mb-10">
+          The following awards will be presented to celebrate outstanding
+          contributions to literature and the arts.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-[#FCFCFB] p-6 rounded-lg shadow-md text-center hover-card"
+          >
+            <h3 class="text-xl font-semibold mb-2">Best New Author</h3>
+            <img class="rounded-[25px]" src="/src/img/category.jpg" alt="" />
+            <p>Recognizing outstanding debut works.</p>
+          </div>
+          <div
+            class="bg-[#FCFCFB] p-6 rounded-lg shadow-md text-center hover-card"
+          >
+            <h3 class="text-xl font-semibold mb-2">Literary Excellence</h3>
+            <img class="rounded-[25px]" src="/src/img/category.jpg" alt="" />
+            <p>Honoring exemplary literary works.</p>
+          </div>
+          <div
+            class="bg-[#FCFCFB] p-6 rounded-lg shadow-md text-center hover-card"
+          >
+            <h3 class="text-xl font-semibold mb-2">Community Impact Award</h3>
+            <img class="rounded-[25px]" src="/src/img/category.jpg" alt="" />
+            <p>Celebrating literature that inspires community change.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nominee List -->
+    <section class="py-16 bg-white" data-aos="fade-left">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">Nominees</h2>
+        <p class="text-lg text-center mb-12">
+          Here are the nominees for this year's awards, each bringing unique
+          stories and contributions.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md text-center hover-card relative"
+          >
+            <img class="rounded-[25px]" src="/src/img/profile.jpg" alt="" />
+            <h3 class="text-xl font-semibold mb-2">Alice Johnson</h3>
+            <p>Nominee for Best New Author.</p>
+            <div
+              class="bio-popup absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white shadow-lg rounded-lg p-4 mt-2 opacity-0 transition-opacity duration-300"
+            >
+              <p>
+                Alice's debut novel captivates readers with its vivid
+                storytelling.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md text-center hover-card relative"
+          >
+            <img class="rounded-[25px]" src="/src/img/profile.jpg" alt="" />
+            <h3 class="text-xl font-semibold mb-2">Michael Smith</h3>
+            <p>Nominee for Literary Excellence.</p>
+            <div
+              class="bio-popup absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white shadow-lg rounded-lg p-4 mt-2 opacity-0 transition-opacity duration-300"
+            >
+              <p>
+                Michael's works are renowned for their intricate narratives.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md text-center hover-card relative"
+          >
+            <img class="rounded-[25px]" src="/src/img/profile.jpg" alt="" />
+            <h3 class="text-xl font-semibold mb-2">Sara Lee</h3>
+            <p>Nominee for Community Impact Award.</p>
+            <div
+              class="bio-popup absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white shadow-lg rounded-lg p-4 mt-2 opacity-0 transition-opacity duration-300"
+            >
+              <p>
+                Sara's writings have inspired community engagement and activism.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Award Ceremony Schedule -->
+    <!-- <section class="py-16 bg-gray-50" data-aos="fade-up">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-4xl font-bold text-center mb-8">Award Ceremony Schedule</h2>
+            <p class="text-lg text-center mb-10">
+                Join us for a night of celebration and inspiration with special guests and keynote speakers.
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+                <li><strong>6:00 PM:</strong> Doors Open</li>
+                <li><strong>7:00 PM:</strong> Keynote Speaker: Johnathan Wright</li>
+                <li><strong>8:00 PM:</strong> Awards Presentation</li>
+                <li><strong>9:00 PM:</strong> Book Signings & Networking</li>
+            </ul>
+        </div>
+    </section> -->
+
+    <!-- Past Awards Recap -->
+    <section class="py-16 bg-white" data-aos="fade-left">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-center mb-8">Past Awards</h2>
+        <p class="text-lg text-center mb-12">
+          Celebrating our previous winners and their remarkable achievements.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <img
+            src="/src/img/category.jpg"
+            class="rounded-lg shadow-md"
+            alt="Past Awards"
+          />
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Highlights of Past Winners
+            </h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>2022: Mark Thompson - Best New Author</li>
+              <li>2021: Emily Richards - Literary Excellence</li>
+              <li>2020: David Kim - Community Impact Award</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-12 bg-blue-600 text-white" data-aos="fade-in">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Join Us for a Night to Remember!
+        </h2>
+        <p class="mb-6">
+          We look forward to celebrating the achievements in literature and the
+          arts with you!
+        </p>
+        <p class="font-semibold">
+          Follow us on social media for the latest updates.
+        </p>
+      </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Show bio popup on hover
+      const nominees = document.querySelectorAll(".hover-card");
+
+      nominees.forEach((nominee) => {
+        nominee.addEventListener("mouseover", function () {
+          const bioPopup = this.querySelector(".bio-popup");
+          bioPopup.classList.add("show");
+        });
+
+        nominee.addEventListener("mouseout", function () {
+          const bioPopup = this.querySelector(".bio-popup");
+          bioPopup.classList.remove("show");
+        });
+      });
+    </script>
+  </body>
+</html>
