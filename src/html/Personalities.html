@@ -160,6 +160,21 @@
         </nav>
       </div>
     </header>
+    
+    <script>
+      // Toggle the mobile menu
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.maxHeight;
+        if (!isOpen || mobileMenu.style.maxHeight === "0px") {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+        } else {
+          mobileMenu.style.maxHeight = "0px";
+        }
+      });
+    </script>
     <!-- Hero Section -->
     <section
       class="hero-bg flex items-center justify-center relative text-center text-white"
