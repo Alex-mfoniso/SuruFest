@@ -173,22 +173,18 @@
   <body class="font-[Poppins] bg-[#F7F7FC] h-screen">
     <div>
       <!-- Header -->
-      <header class="bg-indigo-700 text-white">
+      <header class="bg-[#e9e8e8] text-black">
         <div class="container mx-auto flex justify-between items-center p-5">
           <!-- Logo -->
           <div class="text-3xl font-bold">
             <a href="#">
-              <img
-                src="https://via.placeholder.com/120x50"
-                alt="Logo"
-                class="h-10"
-              />
+              <img src="/img/logo.png" alt="Logo" class="h-10" />
             </a>
           </div>
 
           <!-- Links for desktop -->
           <nav class="hidden lg:flex space-x-8 items-center">
-            <a href="#" class="hover:text-gray-300">About</a>
+           
             <div class="relative group">
               <!-- Event dropdown for desktop -->
               <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -235,8 +231,10 @@
                 </a>
               </div>
             </div>
-            <a href="#" class="hover:text-gray-300">Resource</a>
-            <a href="#" class="hover:text-gray-300">Sponsors</a>
+           
+            <a href="#" class="hover:text-gray-300">Personalities</a>
+            <a href="/src/html/collage.html " class="hover:text-gray-300">Collage</a>
+            <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
             <a href="#" class="hover:text-gray-300">Contact</a>
           </nav>
 
@@ -266,7 +264,7 @@
           class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
         >
           <nav class="flex flex-col space-y-2 p-4 text-white">
-            <a href="#" class="hover:text-gray-300">About</a>
+          
             <!-- Event dropdown always visible for mobile -->
             <div class="relative">
               <div
@@ -293,7 +291,7 @@
                 <a href="/jj.html" class="block px-4 py-2"
                   >Symposium/Personalities</a
                 >
-              
+
                 <a href="#" class="block px-4 py-2">Fashion Fest</a>
                 <a href="/src/html/carnival.html" class="block px-4 py-2"
                   >Carnival</a
@@ -302,8 +300,9 @@
                 <a href="#" class="block px-4 py-2">Book launch and awards </a>
               </div>
             </div>
-            <a href="#" class="hover:text-gray-300">Resource</a>
-            <a href="/src/html/snow.html" class="hover:text-gray-300">Sponsors</a>
+            <a href="#" class="hover:text-gray-300">Personalities</a>
+            <a href="#" class="hover:text-gray-300">Collage</a>
+          
             <a href="/src/html/contact.html" class="hover:text-gray-300"
               >Contact</a
             >
@@ -326,94 +325,104 @@
         });
       </script>
 
-<style>
-  .parent-container {
-  height: 100vh; /* Default: Full screen height */
-}
+      <style>
+        .parent-container {
+          height: 100vh; /* Default: Full screen height */
+        }
 
-/* Adjust height for mobile screens */
-@media (max-width: 640px) {
-  .parent-container {
-    height: auto; /* Allow height to adapt to content */
-    aspect-ratio: 16 / 9; /* Maintain proportional height */
-  }
+        /* Adjust height for mobile screens */
+        @media (max-width: 640px) {
+          .parent-container {
+            height: auto; /* Allow height to adapt to content */
+            aspect-ratio: 16 / 9; /* Maintain proportional height */
+          }
 
-  .slide img {
-    object-contain: cover;
-  }
-}
+          .slide img {
+            object-contain: cover;
+          }
+        }
+      </style>
 
-</style>
-
-<section aria-label="Newest Photos" class="bg-[#EFF0F6] p-4 sm:p-8 relative">
-  <div
-    class="relative overflow-hidden rounded-[25px] parent-container"
-  >
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"></div>
-
-    <!-- Slide-Up Text -->
-    <div
-      class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up px-4"
-    >
-      <div class="text-2xl md:text-4xl lg:text-5xl font-bold text-center">
-        <span id="typewriter-text"></span>
-        <span class="border-r-2 border-[#40405D] animate-blink ml-1"></span>
-      </div>
-    </div>
-
-    <!-- Navigation Buttons -->
-    <button
-      class="absolute z-30 top-1/2 left-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
-      id="prev-button"
-    >
-      <img
-        src="https://img.icons8.com/ios/50/less-than-2.png"
-        alt="Previous"
-        class="w-8 h-8 md:w-12 md:h-12"
-      />
-    </button>
-    <button
-      class="absolute z-30 top-1/2 right-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
-      id="next-button"
-    >
-      <img
-        src="https://img.icons8.com/ios/50/more-than-2.png"
-        alt="Next"
-        class="w-8 h-8 md:w-12 md:h-12"
-      />
-    </button>
-
-    <!-- Slider Content -->
-    <ul class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full" id="slider">
-      <li
-        class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-        data-active
+      <section
+        aria-label="Newest Photos"
+        class="bg-[#EFF0F6] p-4 sm:p-8 relative"
       >
-        <img
-          src="/img/mainpic.png"
-          alt="Nature Image #1"
-          class="block w-full h-full object-contain rounded-[25px]"
-        />
-      </li>
-      <li class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200">
-        <img
-          src="./img/insta.png"
-          alt="Nature Image #2"
-          class="block w-full h-full object-contain rounded-[25px]"
-        />
-      </li>
-      <li class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200">
-        <img
-          src="./img/kids.png"
-          alt="Nature Image #3"
-          class="block w-full h-full object-contain rounded-[25px]"
-        />
-      </li>
-    </ul>
-  </div>
-</section>
+        <div class="relative overflow-hidden rounded-[25px] parent-container">
+          <!-- Overlay -->
+          <div
+            class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
+          ></div>
 
+          <!-- Slide-Up Text -->
+          <div
+            class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up px-4"
+          >
+            <div class="text-2xl md:text-4xl lg:text-5xl font-bold text-center">
+              <span id="typewriter-text"></span>
+              <span
+                class="border-r-2 border-[#40405D] animate-blink ml-1"
+              ></span>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button
+            class="absolute z-30 top-1/2 left-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
+            id="prev-button"
+          >
+            <img
+              src="https://img.icons8.com/ios/50/less-than-2.png"
+              alt="Previous"
+              class="w-8 h-8 md:w-12 md:h-12"
+            />
+          </button>
+          <button
+            class="absolute z-30 top-1/2 right-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
+            id="next-button "
+          >
+            <img
+              src="https://img.icons8.com/ios/50/more-than-2.png"
+              alt="Next"
+              class="w-8 h-8 md:w-12 md:h-12"
+            />
+          </button>
+
+          <!-- Slider Content -->
+          <ul
+            class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
+            id="slider"
+          >
+            <li
+              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
+              data-active
+            >
+              <img
+                src="/img/mainpic.png"
+                alt="Nature Image #1"
+                class="block w-full h-full object-contain rounded-[25px]"
+              />
+            </li>
+            <li
+              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
+            >
+              <img
+                src="./img/insta.png"
+                alt="Nature Image #2"
+                class="block w-full h-full object-contain rounded-[25px]"
+              />
+            </li>
+            <li
+              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
+            >
+              <img
+                src="./img/kids.png"
+                alt="Nature Image #3"
+                class="block w-full h-full object-contain rounded-[25px]"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <div class="scrolling-container" id="text-scrolling">
         <div
@@ -467,14 +476,15 @@
         </div>
       </div>
 
-
       <div class="text-center mx-4 sm:mx-8 lg:mx-20 my-10">
         <div
           id="countdown"
           class="text-xl sm:text-2xl mt-4 font-mono bg-white text-[#1D1D2F] p-6 sm:p-8 rounded-lg shadow-lg"
         >
-          <h1 class="text-3xl sm:text-4xl font-bold mb-6">Countdown to December 15</h1>
-      
+          <h1 class="text-3xl sm:text-4xl font-bold mb-6">
+            Countdown to December 15
+          </h1>
+
           <!-- Countdown Values -->
           <div class="flex flex-wrap justify-center gap-8">
             <div id="days" class="text-center">
@@ -486,16 +496,20 @@
               <p class="text-lg">Hours</p>
             </div>
             <div id="minutes" class="text-center">
-              <p class="text-4xl sm:text-5xl font-bold" id="minutes-value">--</p>
+              <p class="text-4xl sm:text-5xl font-bold" id="minutes-value">
+                --
+              </p>
               <p class="text-lg">Minutes</p>
             </div>
             <div id="seconds" class="text-center">
-              <p class="text-4xl sm:text-5xl font-bold" id="seconds-value">--</p>
+              <p class="text-4xl sm:text-5xl font-bold" id="seconds-value">
+                --
+              </p>
               <p class="text-lg">Seconds</p>
             </div>
           </div>
         </div>
-      
+
         <!-- Message -->
         <p
           id="message"
@@ -504,7 +518,7 @@
           Join the Fun!
         </p>
       </div>
-      
+
       <!-- <div class="text-center ml-[5rem] mr-[5rem]">
         <div
           id="countdown"
@@ -678,6 +692,94 @@
           </a>
         </div>
       </section>
+
+ <style>
+  /* Section: Full-screen height for desktop, dynamic for smaller screens */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* To make video stand out */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-radius: 25px;
+}
+
+/* Video Container: Ensure it fits well across all screen sizes */
+.video-container {
+  width: 100%; /* Takes full width */
+  height: 100%; /* Takes full height */
+  position: relative;
+}
+
+/* Video: Ensure full responsiveness */
+video {
+  width: 100%; 
+  height: 100%;
+  object-fit: contain; /* Ensure the entire video is visible */
+  display: block;
+}
+
+/* Smaller screens handling */
+@media (max-width: 768px) {
+  .video-section {
+    height: auto; /* Allow the section height to adjust for smaller screens */
+    min-height: 60vh; /* Ensures it's visible without being too large */
+  }
+
+  .video-container {
+    height: auto;
+  }
+
+  video {
+    object-fit: contain; /* Show full video, adjusted to screen size */
+   
+  }
+}
+
+ </style>
+     <section class="video-section">
+      <div class="video-container">
+        <video id="scrollVideo" muted playsinline loop>
+          <source src="src/vid/dignitries.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+     
+    </section>
+    <div class="flex justify-center items-center  p-[30px]">
+      <a
+        href="/src/html/collage.html"
+        class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+      >
+        Learn More
+      </a>
+    </div>
+    
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("scrollVideo");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play(); // Play video when visible
+        } else {
+          video.pause(); // Pause video when not visible
+        }
+      });
+    },
+    { threshold: 0.7 } // Play when 70% of the section is visible
+  );
+
+  observer.observe(document.querySelector(".video-section"));
+});
+
+   </script>
       <div class="flex items-center justify-center">
         <p class="text-center text-[#494957] text-[40px]">Our sponspors</p>
       </div>
@@ -719,62 +821,59 @@
         <span class="border-r-2 border-white animate-blink ml-1"></span>
         <!-- Blinking cursor -->
       </div>
-
       <footer class="bg-[#1D1D2F]">
-        <div class="w-full p-[10px_30px_20px]">
+        <div class="w-full p-5 sm:p-10">
           <!-- Footer Navigation -->
-          <div class="pt-1">
-            <ul class="flex justify-center list-none">
-              <li class="mx-3">
+          <div class="pt-3">
+            <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
+              <li>
                 <a
                   href="#"
-                  class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
                   >Home</a
                 >
               </li>
-              <li class="mx-3">
+              <li>
                 <a
                   href="#"
-                  class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
                   >About</a
                 >
               </li>
-              <li class="mx-3">
+              <li>
                 <a
                   href="#"
-                  class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
-                  >Resource</a
+                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                  >Collage</a
                 >
               </li>
-              <li class="mx-3">
+              <li>
                 <a
                   href="#"
-                  class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
                   >Sponsors</a
                 >
               </li>
-              <li class="mx-3">
+              <li>
                 <a
                   href="#"
-                  class="text-white text-xl opacity-70 transition duration-500 hover:opacity-100"
+                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
                   >Contact Us</a
                 >
               </li>
             </ul>
           </div>
         </div>
-
+      
         <!-- Footer Bottom -->
-        <div class="p-5 text-center">
-          <p class="text-white">
-            Copyright &copy;2023;
-            <span class="uppercase tracking-wide font-normal opacity-70"
-              >SuruFest</span
-            >
+        <div class="p-3 sm:p-5 text-center">
+          <p class="text-white text-sm sm:text-base">
+            Copyright &copy; 2023; 
+            <span class="uppercase tracking-wide font-normal opacity-70">SuruFest</span>
           </p>
         </div>
       </footer>
-    </div>
+          </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({

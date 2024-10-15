@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collage Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @media (max-width: 768px) {
+      .desktop-video {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .mobile-video {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+
+       <!-- Header -->
+       <header class="bg-[#e9e8e8] text-black">
+        <div class="container mx-auto flex justify-between items-center p-5">
+          <!-- Logo -->
+          <div class="text-3xl font-bold">
+            <a href="#">
+              <img src="/img/logo.png" alt="Logo" class="h-10" />
+            </a>
+          </div>
+  
+          <!-- Links for desktop -->
+          <nav class="hidden lg:flex space-x-8 items-center">
+            <a href="#" class="hover:text-gray-300">About</a>
+            <div class="relative group">
+              <!-- Event dropdown for desktop -->
+              <button class="flex items-center space-x-1 hover:text-gray-300">
+                <span>Event</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
+              >
+                <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Music Concert</a
+                >
+                <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Symposium/Personalities</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Music and concert</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Fashion Fest</a
+                >
+                <a
+                  href="/src/html/carnival.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
+                  >Carnival</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Football and games
+                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  >Book launch and awards
+                </a>
+              </div>
+            </div>
+            <a href="#" class="hover:text-gray-300">Resource</a>
+            <a href="#" class="hover:text-gray-300">Sponsors</a>
+            <a href="#" class="hover:text-gray-300">Contact</a>
+          </nav>
+  
+          <!-- Hamburger icon for mobile -->
+          <div class="lg:hidden">
+            <button id="menu-toggle" class="focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Mobile menu -->
+        <div
+          id="mobile-menu"
+          class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+        >
+          <nav class="flex flex-col space-y-2 p-4 text-white">
+            <a href="#" class="hover:text-gray-300">About</a>
+            <!-- Event dropdown always visible for mobile -->
+            <div class="relative">
+              <div
+                class="flex justify-between items-center w-full text-left hover:text-gray-300"
+              >
+                <span>Event</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+              <!-- Dropdown always visible in mobile -->
+              <div class="flex flex-col space-y-1 pl-4 mt-2">
+                <a href="#" class="block px-4 py-2">Music Concert</a>
+                <a href="/jj.html" class="block px-4 py-2"
+                  >Symposium/Personalities</a
+                >
+                <a href="#" class="block px-4 py-2">Music and concert</a>
+                <a href="#" class="block px-4 py-2">Fashion Fest</a>
+                <a href="/src/html/carnival.html" class="block px-4 py-2"
+                  >Carnival</a
+                >
+                <a href="#" class="block px-4 py-2">Football and games </a>
+                <a href="#" class="block px-4 py-2">Book launch and awards </a>
+              </div>
+            </div>
+            <a href="#" class="hover:text-gray-300">Resource</a>
+            <a href="/src/html/snow.html" class="hover:text-gray-300">Sponsors</a>
+            <a href="/src/html/contact.html" class="hover:text-gray-300"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </header>
+  
+      <script>
+        // Toggle the mobile menu
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+  
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileMenu.style.maxHeight;
+          if (!isOpen || mobileMenu.style.maxHeight === "0px") {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          } else {
+            mobileMenu.style.maxHeight = "0px";
+          }
+        });
+      </script>
+  <!-- Hero Section with Videos -->
+  <section class="relative w-full h-screen overflow-hidden">
+    <video 
+      class="absolute inset-0 w-full h-full object-cover desktop-video" 
+      autoplay muted loop>
+      <source src="/src/vid/desktop.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video 
+      class="absolute inset-0 w-full h-full object-cover mobile-video" 
+      autoplay muted loop>
+      <source src="/src/vid/mobile.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 flex justify-center items-center">
+      <!-- <h1 class="text-5xl md:text-6xl text-white font-bold">Celebrating Excellence</h1> -->
+    </div>
+  </section>
+
+  <!-- Dignitaries Section -->
+  <section class="py-16 px-8 " >
+    <h2 class="text-4xl font-bold text-center mb-10 text-gray-800">Dignitaries</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div 
+        class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
+        <img 
+          src="/src/img/profile.jpg" 
+          alt="Dignitary 1" 
+          class="w-24 h-24 rounded-full mx-auto"
+        />
+        <h3 class="text-xl font-semibold text-center mt-4">John Doe</h3>
+        <p class="text-center text-gray-600 mt-2">
+          A renowned speaker and visionary leader in the fashion industry.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div 
+        class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <img 
+          src="/src/img/profile.jpg" 
+          alt="Dignitary 2" 
+          class="w-24 h-24 rounded-full mx-auto"
+        />
+        <h3 class="text-xl font-semibold text-center mt-4">Jane Smith</h3>
+        <p class="text-center text-gray-600 mt-2">
+          A creative director known for transforming the runway scene.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div 
+        class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+        data-aos="fade-left"
+        data-aos-duration="1000" 
+      >
+        <img 
+          src="/src/img/profile.jpg" 
+          alt="Dignitary 3" 
+          class="w-24 h-24 rounded-full mx-auto"
+        />
+        <h3 class="text-xl font-semibold text-center mt-4">Alex Johnson</h3>
+        <p class="text-center text-gray-600 mt-2">
+          A fashion entrepreneur with a global impact on sustainable fashion.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Collage Grid Section -->
+  <section class="py-12 px-6 bg-[#FFD19B]   ">
+    <h2 class="text-4xl font-bold text-center mb-10 text-gray-800">Visual Moments</h2>
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      
+      <div class="relative overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
+        <img src="/src/img/category.jpg" 
+          alt="Collage Image 1" 
+          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+      </div>
+
+      <div class="relative overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+        <img src="/src/img/category.jpg" 
+          alt="Collage Image 2" 
+          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+      </div>
+
+      <div class="relative overflow-hidden lg:col-span-2" data-aos="fade-left" data-aos-duration="1000">
+        <img src="/src/img/category.jpg" 
+          alt="Collage Image 3" 
+          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+      </div>
+
+      <div class="relative overflow-hidden lg:row-span-2" data-aos="fade-up" data-aos-duration="1000">
+        <img src="/src/img/category.jpg" 
+          alt="Collage Image 4" 
+          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-[#1D1D2F]">
+    <div class="w-full p-5 sm:p-10">
+      <!-- Footer Navigation -->
+      <div class="pt-3">
+        <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
+          <li>
+            <a
+              href="#"
+              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+              >Collage</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+              >Sponsors</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="p-3 sm:p-5 text-center">
+      <p class="text-white text-sm sm:text-base">
+        Copyright &copy; 2023; 
+        <span class="uppercase tracking-wide font-normal opacity-70">SuruFest</span>
+      </p>
+    </div>
+  </footer>
+  
+
+  <script>
+    // Initialize AOS (Animate on Scroll)
+    AOS.init({
+      once: true, // Animation only triggers once
+      offset: 100, // Trigger animation 100px before element comes into view
+    });
+  </script>
+
+</body>
+</html>
