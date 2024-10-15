@@ -1,82 +1,85 @@
-<section
-aria-label="Newest Photos"
-class="bg-[#EFF0F6] p-[2rem] relative"
->
-<div class="relative overflow-hidden h-screen">
-  <!-- Overlay -->
-  <div
-    class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
-  ></div>
-  <!-- Slide Up Text -->
-  <div
-    class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up"
-  >
-    <br />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Width Image Slider with Typewriter Effect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
 
-    <div class="md:text-3xl lg:text-4xl text-[45px] font-bold">
-      <span id="typewriter-text"></span>
-      <span
-        class="border-r-2 border-[#40405D] animate-blink ml-1"
-      ></span>
-      <!-- Blinking cursor -->
+    .animate-slide {
+      animation: slide 9s infinite;
+    }
+  </style>
+</head>
+<body class="overflow-hidden">
+
+  <!-- Slider Container -->
+  <div class="relative w-full h-screen overflow-hidden">
+    <!-- Typewriter Effect Overlay -->
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+      <h1 id="typewriter" class="text-4xl md:text-6xl font-bold text-white text-center drop-shadow-lg px-4"></h1>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="slider flex w-[300%] h-full animate-slide">
+      <div class="slide w-full shrink-0">
+        <img src="/src/img/accessories.jpg" 
+             alt="Image 1" class="w-full h-full object-cover">
+      </div>
+      <div class="slide w-full shrink-0">
+        <img src="https://via.placeholder.com/1920x1080/333333/FFFFFF?text=Image+2" 
+             alt="Image 2" class="w-full h-full object-cover">
+      </div>
+      <div class="slide w-full shrink-0">
+        <img src="https://via.placeholder.com/1920x1080/555555/FFFFFF?text=Image+3" 
+             alt="Image 3" class="w-full h-full object-cover">
+      </div>
     </div>
   </div>
 
-  <!-- Slider Content -->
-  <button
-    class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
-    id="prev-button"
-  >
-    <img
-      width="50"
-      height="50"
-      src="https://img.icons8.com/ios/50/less-than-2.png"
-      alt="less-than-2"
-    />
-  </button>
-  <button
-    class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
-    id="next-button"
-  >
-    <img
-      width="50"
-      height="50"
-      src="https://img.icons8.com/ios/50/more-than-2.png"
-      alt="more-than-2"
-    />
-  </button>
-  <ul
-    class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
-    id="slider"
-  >
-    <li
-      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
-      data-active
-    >
-      <img
-        src="/img/mainpic.png"
-        alt="Nature Image #1"
-        class="block w-screen object-cover object-center h-full rounded-[25px]"
-      />
-    </li>
-    <li
-      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
-    >
-      <img
-        src="./img/insta.png"
-        alt="Nature Image #2"
-        class="block w-screen object-cover object-center h-full rounded-[25px]"
-      />
-    </li>
-    <li
-      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
-    >
-      <img
-        src="./img/kids.png"
-        alt="Nature Image #3"
-        class="block w-screen object-cover object-center h-full rounded-[25px]"
-      />
-    </li>
-  </ul>
-</div>
-</section>
+  <script>
+    // Typewriter Effect
+    const phrases = [
+      "Welcome to Surulere Day!",
+      "Join the Carnival Fun!",
+      "Unleash Your Talents!",
+      "Experience the Festivities!"
+    ];
+
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+      const typewriter = document.getElementById('typewriter');
+      const currentPhrase = phrases[currentPhraseIndex];
+
+      if (isDeleting) {
+        typewriter.innerText = currentPhrase.substring(0, currentCharIndex--);
+      } else {
+        typewriter.innerText = currentPhrase.substring(0, currentCharIndex++);
+      }
+
+      if (!isDeleting && currentCharIndex === currentPhrase.length) {
+        setTimeout(() => (isDeleting = true), 1000); // Pause before deleting
+      } else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+      }
+
+      setTimeout(typeWriter, isDeleting ? 50 : 100); // Speed control
+    }
+
+    // Start Typewriter Effect
+    document.addEventListener('DOMContentLoaded', typeWriter);
+  </script>
+
+</body>
+</html>

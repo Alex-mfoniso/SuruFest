@@ -485,7 +485,7 @@
           <h1 class="text-3xl sm:text-4xl font-bold mb-6">
             Countdown to December 15
           </h1>
-
+    
           <!-- Countdown Values -->
           <div class="flex flex-wrap justify-center gap-8">
             <div id="days" class="text-center">
@@ -510,7 +510,7 @@
             </div>
           </div>
         </div>
-
+    
         <!-- Message -->
         <p
           id="message"
@@ -519,9 +519,39 @@
           Join the Fun!
         </p>
       </div>
-
-
+    
       
+      
+      <script>
+  
+    // Set the target date to December 15 of the current year
+    const targetDate = new Date(new Date().getFullYear(), 11, 15, 0, 0, 0).getTime();
+
+    // Update the countdown every second
+    const countdownFunction = setInterval(() => {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      // Time calculations for days, hours, minutes, and seconds
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      // Display the result in the corresponding elements
+      document.getElementById('days-value').innerText = days;
+      document.getElementById('hours-value').innerText = hours;
+      document.getElementById('minutes-value').innerText = minutes;
+      document.getElementById('seconds-value').innerText = seconds;
+
+      // If the countdown is finished, display "Join the Fun!"
+      if (timeLeft < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById('countdown').classList.add('hidden');
+        document.getElementById('message').classList.remove('hidden');
+      }
+    }, 1000);
+      </script>
 
 
       

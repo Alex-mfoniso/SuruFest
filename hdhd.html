@@ -1,0 +1,81 @@
+
+<section
+aria-label="Newest Photos"
+class="bg-[#EFF0F6] p-4 sm:p-8 relative"
+>
+<div class="relative overflow-hidden rounded-[25px] parent-container">
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
+  ></div>
+
+  <!-- Slide-Up Text -->
+  <div
+    class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up px-4"
+  >
+    <div class="text-2xl md:text-4xl lg:text-5xl font-bold text-center">
+      <span id="typewriter-text"></span>
+      <span
+        class="border-r-2 border-[#40405D] animate-blink ml-1"
+      ></span>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button
+    class="absolute z-30 top-1/2 left-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
+    id="prev-button"
+  >
+    <img
+      src="https://img.icons8.com/ios/50/less-than-2.png"
+      alt="Previous"
+      class="w-8 h-8 md:w-12 md:h-12"
+    />
+  </button>
+  <button
+    class="absolute z-30 top-1/2 right-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
+    id="next-button "
+  >
+    <img
+      src="https://img.icons8.com/ios/50/more-than-2.png"
+      alt="Next"
+      class="w-8 h-8 md:w-12 md:h-12"
+    />
+  </button>
+
+  <!-- Slider Content -->
+  <ul
+    class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
+    id="slider"
+  >
+    <li
+      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
+      data-active
+    >
+      <img
+        src="/img/mainpic.png"
+        alt="Nature Image #1"
+        class="block w-full h-full object-contain rounded-[25px]"
+      />
+    </li>
+    <li
+      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
+    >
+      <img
+        src="./img/insta.png"
+        alt="Nature Image #2"
+        class="block w-full h-full object-contain rounded-[25px]"
+      />
+    </li>
+    <li
+      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
+    >
+      <img
+        src="./img/kids.png"
+        alt="Nature Image #3"
+        class="block w-full h-full object-contain rounded-[25px]"
+      />
+    </li>
+  </ul>
+</div>
+</section>
