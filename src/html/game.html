@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch the Falling Objects</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #f0f8ff;
+        font-family: sans-serif;
+      }
+      canvas {
+        display: block;
+      }
+      .score {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 24px;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="score">Score: 0</div>
+    <canvas></canvas>
+
+    <script src="game.js"></script>
+  </body>
+</html>

@@ -3,46 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <title>Fanty Carnival - SuruFest</title>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="bower_components/aos/dist/aos.css" /> -->
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      body {
+        background-color: #fdf4ff;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      }
+      .header {
+        background-image: url("https://cdn.pixabay.com/photo/2020/04/23/16/47/festival-5082294_1280.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .confetti::after {
+        content: "";
+        background-image: url("https://cdn.pixabay.com/photo/2017/10/03/10/08/confetti-2819281_1280.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+      #map-popup {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+      }
+      #map-container {
+        margin: auto;
+        width: 90%;
+        max-width: 600px;
+        height: 70vh;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      @media (min-width: 768px) {
+        #map-container {
+          max-width: 800px;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <!-- Header -->
-    <header class="bg-green-500 text-white">
+  <body class="relative overflow-x-hidden confetti">
+    <!-- Header Section -->
+    <header class="bg-[#e9e8e8] text-black">
       <div class="container mx-auto flex justify-between items-center p-5">
         <!-- Logo -->
         <div class="text-3xl font-bold">
           <a href="#">
-            <img
-              src="https://via.placeholder.com/120x50"
-              alt="Logo"
-              class="h-10"
-            />
+            <img src="/img/logo.png" alt="Logo" class="h-10" />
           </a>
         </div>
 
         <!-- Links for desktop -->
         <nav class="hidden lg:flex space-x-8 items-center">
-          <a href="#" class="hover:text-gray-300">About</a>
+         
           <div class="relative group">
             <!-- Event dropdown for desktop -->
             <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -64,26 +102,36 @@
             <div
               class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
             >
-              <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
-                >Football</a
-              >
               <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
-                >Basketball</a
+                >Music Concert</a
               >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
-                >Table Tennis</a
+              <a href="/src/html/Personalities.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Symposium/Personalities</a
               >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
-                >Relay Race</a
+              <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music and concert</a
               >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
-                >Volleyball</a
+              <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Fashion Fest</a
               >
+              <a
+                href="/src/html/carnival.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
+                >Carnival</a
+              >
+              <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Football and games
+              </a>
+              <a href="/src/html/books.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Book launch and awards
+              </a>
             </div>
           </div>
-          <a href="#" class="hover:text-gray-300">Resource</a>
-          <a href="#" class="hover:text-gray-300">Sponsors</a>
-          <a href="#" class="hover:text-gray-300">Contact</a>
+         
+          <a href="#" >Personalities</a>
+          <a href="/src/html/collage.html ">Collage</a>
+          <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
+          <a href="#">Contact</a>
         </nav>
 
         <!-- Hamburger icon for mobile -->
@@ -109,10 +157,10 @@
       <!-- Mobile menu -->
       <div
         id="mobile-menu"
-        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
       >
-        <nav class="flex flex-col space-y-2 p-4 text-white">
-          <a href="#" class="hover:text-gray-300">About</a>
+        <nav class="flex flex-col space-y-2 p-4 text-black">
+        
           <!-- Event dropdown always visible for mobile -->
           <div class="relative">
             <div
@@ -135,17 +183,22 @@
             </div>
             <!-- Dropdown always visible in mobile -->
             <div class="flex flex-col space-y-1 pl-4 mt-2">
-              <a href="/src/html/football.html" class="hover:text-gray-300"
-                >Football</a
+              <a href="#" class="block px-4 py-2">Music Concert</a>
+              <a href="/src/html/Personalities.html" class="block px-4 py-2"
+                >Symposium/Personalities</a
               >
-              <a href="#" class="hover:text-gray-300">Basketball</a>
-              <a href="#" class="hover:text-gray-300">Table Tennis</a>
-              <a href="#" class="hover:text-gray-300">Relay Race</a>
-              <a href="#" class="hover:text-gray-300">Volleyball</a>
+
+              <a href="#" class="block px-4 py-2">Fashion Fest</a>
+              <a href="/src/html/carnival.html" class="block px-4 py-2"
+                >Carnival</a
+              >
+              <a href="/src/html/football.html" class="block px-4 py-2">Football and games </a>
+              <a href="/src/html/books.html" class="block px-4 py-2">Book launch and awards </a>
             </div>
           </div>
-          <a href="#" class="hover:text-gray-300">Resource</a>
-          <a href="#" class="hover:text-gray-300">Sponsors</a>
+          <!-- <a href="#" class="hover:text-gray-300">Personalities</a> -->
+          <a href="/src/html/collage.html" class="hover:text-gray-300">Collage</a>
+        
           <a href="/src/html/contact.html" class="hover:text-gray-300"
             >Contact</a
           >
@@ -153,20 +206,123 @@
       </div>
     </header>
 
-    <script>
-      // Toggle the mobile menu
-      // const menuToggle = document.getElementById("menu-toggle");
-      // const mobileMenu = document.getElementById("mobile-menu");
+  <style>
+    .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Alternatively, use rgba for more control */
+}
 
-      // menuToggle.addEventListener("click", () => {
-      //   const isOpen = mobileMenu.style.maxHeight;
-      //   if (!isOpen || mobileMenu.style.maxHeight === "0px") {
-      //     mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
-      //   } else {
-      //     mobileMenu.style.maxHeight = "0px";
-      //   }
-      // });
-    </script>  
-    <!-- <script src="/app.js"></script> -->
-  <script></script>
+  </style>
+
+    <!-- Activities Section -->
+    <section class="py-20 px-6 bg-white">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-12" data-aos="fade-right">
+          What to Expect
+        </h2>
+        <div class="grid gap-12 md:grid-cols-3">
+          <!-- Activity 1 -->
+          <div data-aos="slide-up" data-aos-delay="100">
+            <img
+              src="/src/img/dance .jpg"
+              alt="Dance Performance"
+              class="w-full h-56 object-cover rounded-lg shadow-lg"
+            />
+            <h3 class="mt-4 text-2xl font-semibold">Dance Parade</h3>
+            <p class="text-gray-600 mt-2">
+              Join the colorful parade with dancers lighting up the streets.
+            </p>
+            <button
+              class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+              onclick="openMapPopup()"
+            >
+              View Parade Route
+            </button>
+          </div>
+
+          <!-- Activity 2 -->
+          <div data-aos="slide-up" data-aos-delay="200">
+            <img
+              src="/src/img/live music.jpg"
+              alt="Live Music"
+              class="w-full h-56 object-cover rounded-lg shadow-lg"
+            />
+            <h3 class="mt-4 text-2xl font-semibold">Live Music & Bands</h3>
+            <p class="text-gray-600 mt-2">
+              Experience the magic of live music with top artists.
+            </p>
+          </div>
+
+          <!-- Activity 3 -->
+          <div data-aos="slide-up" data-aos-delay="300">
+            <img
+            src="/src/img/foods.jpg"
+              alt="Carnival Food"
+              class="w-full h-56 object-cover rounded-lg shadow-lg"
+            />
+            <h3 class="mt-4 text-2xl font-semibold">Delicious Food Stalls</h3>
+            <p class="text-gray-600 mt-2">
+              Savor traditional and exotic cuisines from around the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Popup -->
+    <div id="map-popup" class="flex items-center justify-center">
+      <div id="map-container">
+        <div id="map" class="h-full"></div>
+        <button
+          class="absolute top-4 right-4 bg-red-600 text-white px-3 py-2 rounded-md"
+          onclick="closeMapPopup()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <a href="/src/html/game.html">play some game</a>
+
+    <!-- Footer Section -->
+    <footer class="py-6 text-center gradient-bg text-white">
+      <p>&copy; 2024 SuruFest. All Rights Reserved.</p>
+    </footer>
+
+    <!-- AOS Initialization -->
+    <script>
+      AOS.init({ duration: 1200, once: true });
+
+      function openMapPopup() {
+        document.getElementById("map-popup").style.display = "flex";
+      }
+
+      function closeMapPopup() {
+        document.getElementById("map-popup").style.display = "none";
+      }
+    </script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      const map = L.map("map").setView([6.4976, 3.3603], 14);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      L.marker([6.4976, 3.3603])
+        .addTo(map)
+        .bindPopup("<b>Start:</b> 114 Funsho Williams Ave")
+        .openPopup();
+      L.marker([6.5059, 3.3554])
+        .addTo(map)
+        .bindPopup("<b>End:</b> 166 Ogunlana Dr");
+    </script>
+  </body>
 </html>

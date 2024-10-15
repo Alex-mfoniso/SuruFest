@@ -1,77 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symposium & Personalities</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-5xl mx-auto text-center">
-          <h1 class="text-4xl font-bold mb-4">Symposium & Personalities</h1>
-          <p class="text-lg mb-10">
-            Exploring Ideas and Innovations with Industry Leaders
-          </p>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .hero-bg {
+        background-image: url("/src/img/symposium.jpg"); /* Replace with your image */
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+      }
+
+      @media (max-width: 768px) {
+        .hero-bg {
+          background-attachment: scroll; /* Prevent fixed on smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+
+    <header class="bg-[#e9e8e8] text-black">
+      <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Logo -->
+        <div class="text-3xl font-bold">
+          <a href="#">
+            <img src="/img/logo.png" alt="Logo" class="h-10" />
+          </a>
         </div>
+
+        <!-- Links for desktop -->
+        <nav class="hidden lg:flex space-x-8 items-center">
+         
+          <div class="relative group">
+            <!-- Event dropdown for desktop -->
+            <button class="flex items-center space-x-1 hover:text-gray-300">
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music Concert</a
+              >
+              <a href="/src/html/Personalities.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Symposium/Personalities</a
+              >
+              <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Music and concert</a
+              >
+              <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Fashion Fest</a
+              >
+              <a
+                href="/src/html/carnival.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
+                >Carnival</a
+              >
+              <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Football and games
+              </a>
+              <a href="/src/html/books.html" class="block px-4 py-2 hover:bg-indigo-100"
+                >Book launch and awards
+              </a>
+            </div>
+          </div>
+         
+          <a href="#" >Personalities</a>
+          <a href="/src/html/collage.html ">Collage</a>
+          <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- Hamburger icon for mobile -->
+        <div class="lg:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
+      >
+        <nav class="flex flex-col space-y-2 p-4 text-black">
         
-        <!-- Overview -->
-        <div class="max-w-4xl mx-auto mb-10 text-center">
-          <p class="text-lg text-gray-700">
-            Join us for an enlightening symposium featuring renowned personalities from various fields, sharing insights on critical issues and innovations.
-          </p>
-          <p class="font-semibold">Date: October 20, 2024</p>
-          <p class="font-semibold">Location: Grand Arena, Surulere, Lagos</p>
-        </div>
-      
-        <!-- Featured Personalities -->
-        <h2 class="text-3xl font-bold text-center mb-6">Featured Personalities</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <!-- Personality Card -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
-            <img src="path/to/photo.jpg" alt="Personality Name" class="w-full h-48 object-cover rounded-lg mb-4" />
-            <h3 class="text-2xl font-semibold">Personality Name</h3>
-            <p class="mt-2 text-gray-600">Title/Position</p>
-            <p class="mt-2 text-gray-700">Brief bio and topics covered.</p>
-            <a href="#" class="text-indigo-600 hover:underline">More Info</a>
+          <!-- Event dropdown always visible for mobile -->
+          <div class="relative">
+            <div
+              class="flex justify-between items-center w-full text-left hover:text-gray-300"
+            >
+              <span>Event</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <!-- Dropdown always visible in mobile -->
+            <div class="flex flex-col space-y-1 pl-4 mt-2">
+              <a href="#" class="block px-4 py-2">Music Concert</a>
+              <a href="/src/html/Personalities.html" class="block px-4 py-2"
+                >Symposium/Personalities</a
+              >
+
+              <a href="#" class="block px-4 py-2">Fashion Fest</a>
+              <a href="/src/html/carnival.html" class="block px-4 py-2"
+                >Carnival</a
+              >
+              <a href="/src/html/football.html" class="block px-4 py-2">Football and games </a>
+              <a href="/src/html/books.html" class="block px-4 py-2">Book launch and awards </a>
+            </div>
           </div>
-          <!-- Repeat for other personalities -->
-        </div>
-      
-        <!-- Schedule -->
-        <h2 class="text-3xl font-bold text-center my-10">Schedule of Events</h2>
-        <table class="w-full text-left">
-          <thead>
-            <tr class="bg-gray-200">
-              <th class="p-3">Time</th>
-              <th class="p-3">Session Title</th>
-              <th class="p-3">Speaker</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="p-3">10:00 AM</td>
-              <td class="p-3">Opening Remarks</td>
-              <td class="p-3">Keynote Speaker Name</td>
-            </tr>
-            <!-- Repeat for other sessions -->
-          </tbody>
-        </table>
-      
-        <!-- Registration Information -->
-        <div class="text-center mt-12">
-          <h2 class="text-3xl font-bold mb-4">Registration</h2>
-          <p class="text-lg mb-4">Register now to secure your spot!</p>
-          <a href="#" class="bg-indigo-600 hover:bg-indigo-800 text-white py-3 px-6 rounded-lg text-lg">Register Here</a>
-        </div>
-      
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-8">
-          <div class="max-w-4xl mx-auto text-center">
-            <p>&copy; 2024 SuruFest. All Rights Reserved.</p>
+          <!-- <a href="#" class="hover:text-gray-300">Personalities</a> -->
+          <a href="/src/html/collage.html" class="hover:text-gray-300">Collage</a>
+        
+          <a href="/src/html/contact.html" class="hover:text-gray-300"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="hero-bg flex items-center justify-center relative text-center text-white"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 px-6">
+        <h1
+          class="text-5xl md:text-6xl font-bold"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          Symposium 2024
+        </h1>
+        <p class="mt-4 text-xl" data-aos="fade-up" data-aos-delay="300">
+          Explore the intersection of culture, business, and innovation with
+          renowned speakers.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Symposium Section -->
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8 text-gray-800" data-aos="fade-up">
+          About the Symposium
+        </h2>
+        <p
+          class="text-lg text-gray-600"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Our symposium focuses on bridging gaps between industries and
+          celebrating innovation. Thought leaders from different fields will
+          share insights to inspire the next generation of changemakers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Personalities Section -->
+    <section class="py-16 px-6 bg-gray-100">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-right">
+          Featured Personalities
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Speaker 1 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <img
+              src="/src/img/profile.jpg"
+              alt="Speaker 1"
+              class="w-24 h-24 rounded-full mx-auto"
+            />
+            <h3 class="text-xl font-semibold text-center mt-4">John Doe</h3>
+            <p class="text-center text-gray-600 mt-2">
+              An influential business leader and keynote speaker.
+            </p>
           </div>
-        </footer>
-      </section>
-      
-</body>
+
+          <!-- Speaker 2 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="/src/img/profile.jpg"
+              alt="Speaker 2"
+              class="w-24 h-24 rounded-full mx-auto"
+            />
+            <h3 class="text-xl font-semibold text-center mt-4">Jane Smith</h3>
+            <p class="text-center text-gray-600 mt-2">
+              Creative visionary in tech and education.
+            </p>
+          </div>
+
+          <!-- Speaker 3 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="/src/img/profile.jpg"
+              alt="Speaker 3"
+              class="w-24 h-24 rounded-full mx-auto"
+            />
+            <h3 class="text-xl font-semibold text-center mt-4">Alex Johnson</h3>
+            <p class="text-center text-gray-600 mt-2">
+              Global ambassador for sustainable development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Panel Discussions Section -->
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-8" data-aos="fade-left">
+          Panel Discussions & Topics
+        </h2>
+        <div class="space-y-6">
+          <!-- Topic 1 -->
+          <div
+            class="p-6 bg-gray-50 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <h3 class="text-2xl font-semibold mb-2">
+              The Future of Artificial Intelligence
+            </h3>
+            <p class="text-gray-600">
+              Industry leaders discuss how AI will shape business, culture, and
+              everyday life.
+            </p>
+          </div>
+
+          <!-- Topic 2 -->
+          <div
+            class="p-6 bg-gray-50 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="text-2xl font-semibold mb-2">
+              Sustainability in Business
+            </h3>
+            <p class="text-gray-600">
+              Explore the importance of sustainable practices for the future of
+              industries.
+            </p>
+          </div>
+
+          <!-- Topic 3 -->
+          <div
+            class="p-6 bg-gray-50 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <h3 class="text-2xl font-semibold mb-2">
+              Digital Transformation in Education
+            </h3>
+            <p class="text-gray-600">
+              Learn how technology is redefining learning experiences and access
+              to education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+      <div class="text-center">
+        <p>&copy; 2024 Symposium | All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize AOS (Animate on Scroll)
+      AOS.init({
+        duration: 1000, // Global animation duration
+        once: true, // Animate only once on scroll
+      });
+    </script>
+  </body>
 </html>
