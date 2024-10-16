@@ -360,88 +360,49 @@
         }
       </style>
 
-<section
-aria-label="Newest Photos"
-class="bg-[#EFF0F6] p-[2rem] relative"
->
-<div class="relative overflow-hidden h-screen">
-  <!-- Overlay -->
-  <div
-    class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
-  ></div>
-  <!-- Slide Up Text -->
-  <div
-    class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up"
-  >
-    <br />
 
-    <div class="md:text-3xl lg:text-4xl text-[45px] font-bold">
-      <span id="typewriter-text"></span>
-      <span
-        class="border-r-2 border-[#40405D] animate-blink ml-1"
-      ></span>
-      <!-- Blinking cursor -->
+<section aria-label="Newest Photos" class="p-4 relative">
+  <div class="relative overflow-hidden rounded-[25px]">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"></div>
+
+    <!-- Slide Up Text -->
+    <div class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up">
+      <div class="md:text-3xl lg:text-4xl text-[30px] sm:text-[45px] font-bold">
+        <span id="typewriter-text"></span>
+        <span class="border-r-2 border-[#40405D] animate-blink ml-1"></span>
+      </div>
     </div>
-  </div>
 
-  <!-- Slider Content -->
-  <button
-    class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
-    id="prev-button"
-  >
-    <img
-      width="50"
-      height="50"
-      src="https://img.icons8.com/ios/50/less-than-2.png"
-      alt="less-than-2"
-    />
-  </button>
-  <button
-    class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
-    id="next-button"
-  >
-    <img
-      width="50"
-      height="50"
-      src="https://img.icons8.com/ios/50/more-than-2.png"
-      alt="more-than-2"
-    />
-  </button>
-  <ul
-    class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
-    id="slider"
-  >
-    <li
-      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
-      data-active
+    <!-- Slider Content -->
+    <ul class="m-0 p-0 list-none" id="slider">
+      <li class="slide opacity-0 transition-opacity duration-700" data-active>
+        <img src="/img/mainpic.png" alt="Image 1" class="block w-full object-contain" />
+      </li>
+      <li class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700">
+        <img src="./img/insta.png" alt="Image 2" class="block w-full object-contain" />
+      </li>
+      <li class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700">
+        <img src="./img/kids.png" alt="Image 3" class="block w-full object-contain" />
+      </li>
+    </ul>
+
+    <!-- Slider Navigation Buttons -->
+    <button
+      class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+      id="prev-button"
     >
-      <img
-        src="/img/mainpic.png"
-        alt="Nature Image #1"
-        class="block w-screen object-cover object-center h-full rounded-[25px]"
-      />
-    </li>
-    <li
-      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/less-than-2.png" alt="Previous Slide" />
+    </button>
+    <button
+      class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+      id="next-button"
     >
-      <img
-        src="./img/insta.png"
-        alt="Nature Image #2"
-        class="block w-screen object-cover object-center h-full rounded-[25px]"
-      />
-    </li>
-    <li
-      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
-    >
-      <img
-        src="./img/kids.png"
-        alt="Nature Image #3"
-        class="block w-screen object-cover object-center h-full rounded-[25px]"
-      />
-    </li>
-  </ul>
-</div>
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/more-than-2.png" alt="Next Slide" />
+    </button>
+  </div>
 </section>
+
 <script>
   
 

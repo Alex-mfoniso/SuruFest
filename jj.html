@@ -3,86 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Responsive Image Slider with Typewriter Effect</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <div class="text-center mx-4 sm:mx-8 lg:mx-20 my-10">
-    <div
-      id="countdown"
-      class="text-xl sm:text-2xl mt-4 font-mono bg-white text-[#1D1D2F] p-6 sm:p-8 rounded-lg shadow-lg"
-    >
-      <h1 class="text-3xl sm:text-4xl font-bold mb-6">
-        Countdown to December 15
-      </h1>
+  <style>
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
 
-      <!-- Countdown Values -->
-      <div class="flex flex-wrap justify-center gap-8">
-        <div id="days" class="text-center">
-          <p class="text-4xl sm:text-5xl font-bold" id="days-value">--</p>
-          <p class="text-lg">Days</p>
-        </div>
-        <div id="hours" class="text-center">
-          <p class="text-4xl sm:text-5xl font-bold" id="hours-value">--</p>
-          <p class="text-lg">Hours</p>
-        </div>
-        <div id="minutes" class="text-center">
-          <p class="text-4xl sm:text-5xl font-bold" id="minutes-value">
-            --
-          </p>
-          <p class="text-lg">Minutes</p>
-        </div>
-        <div id="seconds" class="text-center">
-          <p class="text-4xl sm:text-5xl font-bold" id="seconds-value">
-            --
-          </p>
-          <p class="text-lg">Seconds</p>
-        </div>
-      </div>
+    .animate-slide {
+      animation: slide 9s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center h-screen overflow-hidden">
+
+  <!-- Slider Container -->
+  <div class="relative w-full max-w-screen-lg aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+    <!-- Typewriter Effect Overlay -->
+    <div class="absolute inset-0 flex items-center justify-center z-10 bg-black/50">
+      <h1 id="typewriter" class="text-2xl sm:text-4xl md:text-5xl font-bold text-white text-center px-4"></h1>
     </div>
 
-    <!-- Message -->
-    <p
-      id="message"
-      class="mt-6 text-2xl sm:text-3xl font-semibold text-green-600 hidden"
-    >
-      Join the Fun!
-    </p>
+    <!-- Image Slider -->
+    <div class="slider flex w-[300%] h-full animate-slide">
+      <div class="slide w-full shrink-0">
+        <img src="https://via.placeholder.com/1920x1080/1A1A1A/FFFFFF?text=Image+1" 
+             alt="Image 1" class="w-full h-full object-cover">
+      </div>
+      <div class="slide w-full shrink-0">
+        <img src="https://via.placeholder.com/1920x1080/333333/FFFFFF?text=Image+2" 
+             alt="Image 2" class="w-full h-full object-cover">
+      </div>
+      <div class="slide w-full shrink-0">
+        <img src="https://via.placeholder.com/1920x1080/555555/FFFFFF?text=Image+3" 
+             alt="Image 3" class="w-full h-full object-cover">
+      </div>
+    </div>
   </div>
 
-  
-  
+  <script>
+    // Typewriter Effect
+    const phrases = [
+      "Welcome to Surulere Day!",
+      "Join the Carnival Fun!",
+      "Unleash Your Talents!",
+      "Experience the Festivities!"
+    ];
+
+    let currentPhraseIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+      const typewriter = document.getElementById('typewriter');
+      const currentPhrase = phrases[currentPhraseIndex];
+
+      if (isDeleting) {
+        typewriter.innerText = currentPhrase.substring(0, currentCharIndex--);
+      } else {
+        typewriter.innerText = currentPhrase.substring(0, currentCharIndex++);
+      }
+
+      if (!isDeleting && currentCharIndex === currentPhrase.length) {
+        setTimeout(() => (isDeleting = true), 1000); // Pause before deleting
+      } else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+      }
+
+      setTimeout(typeWriter, isDeleting ? 50 : 100); // Speed control
+    }
+
+    // Start Typewriter Effect
+    document.addEventListener('DOMContentLoaded', typeWriter);
+  </script>
 
 </body>
-<script>
-  
-    // Set the target date to December 15 of the current year
-    const targetDate = new Date(new Date().getFullYear(), 11, 15, 0, 0, 0).getTime();
-
-    // Update the countdown every second
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
-
-      // Time calculations for days, hours, minutes, and seconds
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      // Display the result in the corresponding elements
-      document.getElementById('days-value').innerText = days;
-      document.getElementById('hours-value').innerText = hours;
-      document.getElementById('minutes-value').innerText = minutes;
-      document.getElementById('seconds-value').innerText = seconds;
-
-      // If the countdown is finished, display "Join the Fun!"
-      if (timeLeft < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById('countdown').classList.add('hidden');
-        document.getElementById('message').classList.remove('hidden');
-      }
-    }, 1000);
-
-</script>
 </html>
+  
