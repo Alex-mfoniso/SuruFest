@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mainland Fashion Fest</title>
 
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-        html {
-            scroll-behavior: smooth;
-            
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        .hero-bg {
-            background-image: url('/src/img/mainfashion2.jpg');
-            background-size: cover;
-            background-position: center;
-            
-        }
+      .hero-bg {
+        background-image: url("/src/img/fashion.jpg");
+        background-size: cover;
+        background-position: center;
+      }
 
-        .hover-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .hover-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+      .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-gray-100 text-gray-800">
-
-     <!-- Header -->
-     <header class="bg-[#e9e8e8] text-black">
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-[#e9e8e8] text-black">
       <div class="container mx-auto flex justify-between items-center p-5">
         <!-- Logo -->
         <div class="text-3xl font-bold">
@@ -211,211 +207,290 @@
 
     <!-- Hero Section -->
     <header class="hero-bg h-[80vh] flex items-center justify-center">
-        <div class="text-center text-white p-6 sm:p-8 bg-black bg-opacity-50 rounded-lg" data-aos="fade-up">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Celebrating Creativity and Style on the Mainland</h1>
-            <p class="text-lg sm:text-xl mb-4">Join us for a vibrant showcase of fashion, designers, and creativity.</p>
-            <a href="#featured-designers" id="" class="bg-pink-500 px-6 py-3 text-white font-semibold rounded-lg hover:bg-pink-600 transition">
-                Discover More
-            </a>
-        </div>
+      <div
+        class="text-center text-white p-6 sm:p-8 bg-black bg-opacity-50 rounded-lg"
+        data-aos="fade-up"
+      >
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+          Celebrating Creativity and Style on the Mainland
+        </h1>
+        <p class="text-lg sm:text-xl mb-4">
+          Join us for a vibrant showcase of fashion, designers, and creativity.
+        </p>
+        <a
+          href="#featured-designers"
+          id=""
+          class="bg-pink-500 px-6 py-3 text-white font-semibold rounded-lg hover:bg-pink-600 transition"
+        >
+          Discover More
+        </a>
+      </div>
     </header>
 
     <!-- Fashion Exhibits Section -->
-    <section  id="featured-designers" class="py-12 sm:py-16 bg-white" data-aos="fade-left">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8">Fashion Exhibits</h2>
-            <p class="text-center text-lg mb-12">Explore exhibits that showcase cutting-edge fashion trends and accessories.</p>
-            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center">
-                    <img src="/src/img/accessories.jpg" alt="Accessories" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Luxury Accessories</h3>
-                    <p>Discover high-end jewelry, shoes, and handbags from top designers.</p>
-                </div>
-                <div class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center">
-                    <img src="/src/img/fabrics.jpg" alt="Fabrics" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Innovative Fabrics</h3>
-                    <p>Experience eco-friendly textiles redefining modern fashion.</p>
-                </div>
-                <div class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center">
-                    <img src="/src/img/clothing.jpg" alt="Clothing" class="rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Contemporary Clothing</h3>
-                    <p>A showcase of the latest trends in casual and formal wear.</p>
-                </div>
-            </div>
+    <section
+      id="featured-designers"
+      class="py-12 sm:py-16 bg-white"
+      data-aos="fade-left"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8">
+          Fashion Exhibits
+        </h2>
+        <p class="text-center text-lg mb-12">
+          Explore exhibits that showcase cutting-edge fashion trends and
+          accessories.
+        </p>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center"
+          >
+            <img
+              src="/src/img/accessories.jpg"
+              alt="Accessories"
+              class="rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Luxury Accessories</h3>
+            <p>
+              Discover high-end jewelry, shoes, and handbags from top designers.
+            </p>
+          </div>
+          <div
+            class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center"
+          >
+            <img
+              src="/src/img/fabrics.jpg"
+              alt="Fabrics"
+              class="rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Innovative Fabrics</h3>
+            <p>Experience eco-friendly textiles redefining modern fashion.</p>
+          </div>
+          <div
+            class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center"
+          >
+            <img
+              src="/src/img/clothing.jpg"
+              alt="Clothing"
+              class="rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Contemporary Clothing</h3>
+            <p>A showcase of the latest trends in casual and formal wear.</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Photo Gallery Section -->
     <section class="py-12 sm:py-16 bg-gray-50" data-aos="fade-right">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8">Photo Gallery</h2>
-          <div id="gallery" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item" alt="Gallery Image 1">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item" alt="Gallery Image 2">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item" alt="Gallery Image 3">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item " alt="Gallery Image 4">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item hidden" alt="Gallery Image 5">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item hidden" alt="Gallery Image 6">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item hidden" alt="Gallery Image 7">
-              <img src="/src/img/fashion.jpg" class="rounded-lg shadow-md gallery-item hidden" alt="Gallery Image 8">
-          </div>
-          <div class="text-center mt-6">
-              <button id="showMoreBtn" 
-                  class="bg-pink-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-pink-600 transition">
-                  Show More
-              </button>
-              <button id="seeLessBtn" 
-                  class="bg-gray-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-gray-600 transition hidden">
-                  See Less
-              </button>
-          </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8">
+          Photo Gallery
+        </h2>
+        <div id="gallery" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item"
+            alt="Gallery Image 1"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item"
+            alt="Gallery Image 2"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item"
+            alt="Gallery Image 3"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item"
+            alt="Gallery Image 4"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item hidden"
+            alt="Gallery Image 5"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item hidden"
+            alt="Gallery Image 6"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item hidden"
+            alt="Gallery Image 7"
+          />
+          <img
+            src="/src/img/fashion.jpg"
+            class="rounded-lg shadow-md gallery-item hidden"
+            alt="Gallery Image 8"
+          />
+        </div>
+        <div class="text-center mt-6">
+          <button
+            id="showMoreBtn"
+            class="bg-pink-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-pink-600 transition"
+          >
+            Show More
+          </button>
+          <button
+            id="seeLessBtn"
+            class="bg-gray-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-gray-600 transition hidden"
+          >
+            See Less
+          </button>
+        </div>
       </div>
-  </section>
-    
+    </section>
 
-  <div class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Card 1 -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img
-        src="/src/img/mainland.jpg"
-        alt="Card 1 Image"
-        class="w-full h-48 object-cover"
-      />
-      <div class="p-6">
-        <h2 class="text-xl font-bold mb-2">Card Title 1</h2>
-        <p class="text-gray-700 mb-4">
-          click on the button to become one of our fashion designer, for mainlander only. 
-        </p>
-        <button
-          class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
-          onclick="sendEmail('example1@gmail.com')"
-        >
-          Contact Us
-        </button>
+    <div
+      class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+    >
+      <!-- Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="/src/img/mainland.jpg"
+          alt="Card 1 Image"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Card Title 1</h2>
+          <p class="text-gray-700 mb-4">
+            click on the button to become one of our fashion designer, for
+            mainlander only.
+          </p>
+          <button
+            class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
+            onclick="sendEmail('example1@gmail.com')"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="/src/img/mainfashion.jpg"
+          alt="Card 2 Image"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Card Title 2</h2>
+          <p class="text-gray-700 mb-4">
+            click on the button to become one of our fashion designer.
+          </p>
+          <button
+            class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
+            onclick="sendEmail('example2@gmail.com')"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="/src/img/model.jpg"
+          alt="Card 3 Image"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2">Card Title 3</h2>
+          <p class="text-gray-700 mb-4">
+            click on the button to become on of our model.
+          </p>
+          <button
+            class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
+            onclick="sendEmail('example3@gmail.com')"
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img
-        src="/src/img/mainfashion.jpg"
-        alt="Card 2 Image"
-        class="w-full h-48 object-cover"
-      />
-      <div class="p-6">
-        <h2 class="text-xl font-bold mb-2">Card Title 2</h2>
-        <p class="text-gray-700 mb-4">
-          click on the button to become one of our fashion designer.
-        </p>
-        <button
-          class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
-          onclick="sendEmail('example2@gmail.com')"
-        >
-          Contact Us
-        </button>
-      </div>
-    </div>
+    <script>
+      // Function to open the default email client
+      function sendEmail(email) {
+        const subject = encodeURIComponent("Inquiry from Website");
+        const body = encodeURIComponent(
+          "Hello, I would like to inquire about your services."
+        );
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+      }
+    </script>
 
-    <!-- Card 3 -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img
-        src="/src/img/model.jpg"
-        alt="Card 3 Image"
-        class="w-full h-48 object-cover"
-      />
-      <div class="p-6">
-        <h2 class="text-xl font-bold mb-2">Card Title 3</h2>
-        <p class="text-gray-700 mb-4">
-          click on the button to become on of our model.
-        </p>
-        <button
-          class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
-          onclick="sendEmail('example3@gmail.com')"
-        >
-          Contact Us
-        </button>
-      </div>
-    </div>
-  </div>
+    <script>
+      const showMoreBtn = document.getElementById("showMoreBtn");
+      const seeLessBtn = document.getElementById("seeLessBtn");
+      const hiddenItems = document.querySelectorAll(".gallery-item.hidden");
 
-  <script>
-    // Function to open the default email client
-    function sendEmail(email) {
-      const subject = encodeURIComponent('Inquiry from Website');
-      const body = encodeURIComponent('Hello, I would like to inquire about your services.');
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    }
-  </script>
-
-  <script>
-      const showMoreBtn = document.getElementById('showMoreBtn');
-      const seeLessBtn = document.getElementById('seeLessBtn');
-      const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
-  
-      showMoreBtn.addEventListener('click', () => {
-          hiddenItems.forEach(item => item.classList.remove('hidden'));
-          showMoreBtn.classList.add('hidden'); // Hide the Show More button
-          seeLessBtn.classList.remove('hidden'); // Show the See Less button
+      showMoreBtn.addEventListener("click", () => {
+        hiddenItems.forEach((item) => item.classList.remove("hidden"));
+        showMoreBtn.classList.add("hidden"); // Hide the Show More button
+        seeLessBtn.classList.remove("hidden"); // Show the See Less button
       });
-  
-      seeLessBtn.addEventListener('click', () => {
-          hiddenItems.forEach(item => item.classList.add('hidden'));
-          seeLessBtn.classList.add('hidden'); // Hide the See Less button
-          showMoreBtn.classList.remove('hidden'); // Show the Show More button
+
+      seeLessBtn.addEventListener("click", () => {
+        hiddenItems.forEach((item) => item.classList.add("hidden"));
+        seeLessBtn.classList.add("hidden"); // Hide the See Less button
+        showMoreBtn.classList.remove("hidden"); // Show the Show More button
       });
-  </script>
-  
+    </script>
 
-  <footer class="bg-[#1D1D2F]">
-    <div class="w-full p-5 sm:p-10">
-      <!-- Footer Navigation -->
-      <div class="pt-3">
-        <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
-          <li>
-            <a
-              href="/index.html"
-              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-              >Home</a
-            >
-          </li>
-          <li></li>
+    <footer class="bg-[#1D1D2F]">
+      <div class="w-full p-5 sm:p-10">
+        <!-- Footer Navigation -->
+        <div class="pt-3">
+          <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
+            <li>
+              <a
+                href="/index.html"
+                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Home</a
+              >
+            </li>
+            <li></li>
 
-          <li>
-            <a
-              href="/src/html/collage.html"
-              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-              >Collage</a
-            >
-          </li>
+            <li>
+              <a
+                href="/src/html/collage.html"
+                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Collage</a
+              >
+            </li>
 
-          <li>
-            <a
-              href="/contact.html"
-              class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
+            <li>
+              <a
+                href="/contact.html"
+                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="p-3 sm:p-5 text-center">
-      <p class="text-white text-sm sm:text-base">
-        Copyright &copy; 2023;
-        <span class="uppercase tracking-wide font-normal opacity-70"
-          >SuruFest</span
-        >
-      </p>
-    </div>
-  </footer>
+      <!-- Footer Bottom -->
+      <div class="p-3 sm:p-5 text-center">
+        <p class="text-white text-sm sm:text-base">
+          Developed By: Morakinyo Taylor
+          <span class="uppercase tracking-wide font-normal opacity-70"
+            >SuruFest</span
+          >
+        </p>
+      </div>
+    </footer>
 
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-
-</body>
-
+  </body>
 </html>
