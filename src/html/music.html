@@ -32,14 +32,13 @@
           <div class="container mx-auto flex justify-between items-center p-5">
             <!-- Logo -->
             <div class="text-3xl font-bold">
-              <a href="#">
+              <a href="index.html">
                 <img src="/img/logo.png" alt="Logo" class="h-10" />
               </a>
             </div>
   
             <!-- Links for desktop -->
             <nav class="hidden lg:flex space-x-8 items-center">
-             
               <div class="relative group">
                 <!-- Event dropdown for desktop -->
                 <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -61,16 +60,22 @@
                 <div
                   class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
                 >
-                  <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+                  <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
                     >Music Concert</a
                   >
-                  <a href="/src/html/Personalities.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  <a
+                    href="/src/html/Personalities.html"
+                    class="block px-4 py-2 hover:bg-indigo-100"
                     >Symposium/Personalities</a
                   >
-                  <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  <a
+                    href="/src/html/music.html"
+                    class="block px-4 py-2 hover:bg-indigo-100"
                     >Music and concert</a
                   >
-                  <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  <a
+                    href="/src/html/fashion.html"
+                    class="block px-4 py-2 hover:bg-indigo-100"
                     >Fashion Fest</a
                   >
                   <a
@@ -78,19 +83,23 @@
                     class="block px-4 py-2 hover:bg-indigo-100"
                     >Carnival</a
                   >
-                  <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  <a
+                    href="/src/html/fashion.html"
+                    class="block px-4 py-2 hover:bg-indigo-100"
                     >Football and games
                   </a>
-                  <a href="/src/html/books.html" class="block px-4 py-2 hover:bg-indigo-100"
+                  <a
+                    href="/src/html/books.html"
+                    class="block px-4 py-2 hover:bg-indigo-100"
                     >Book launch and awards
                   </a>
                 </div>
               </div>
-             
-              <a href="#" >Personalities</a>
+  
+              <a href="/src/html/Personalities.html">Personalities</a>
               <a href="/src/html/collage.html ">Collage</a>
               <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
-              <a href="#">Contact</a>
+              <a href="./contact.html">Contact</a>
             </nav>
   
             <!-- Hamburger icon for mobile -->
@@ -119,7 +128,6 @@
             class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
           >
             <nav class="flex flex-col space-y-2 p-4 text-black">
-            
               <!-- Event dropdown always visible for mobile -->
               <div class="relative">
                 <div
@@ -142,25 +150,33 @@
                 </div>
                 <!-- Dropdown always visible in mobile -->
                 <div class="flex flex-col space-y-1 pl-4 mt-2">
-                  <a href="#" class="block px-4 py-2">Music Concert</a>
+                  <a href="./src/html/music.html" class="block px-4 py-2"
+                    >Music Concert</a
+                  >
                   <a href="/src/html/Personalities.html" class="block px-4 py-2"
                     >Symposium/Personalities</a
                   >
   
-                  <a href="#" class="block px-4 py-2">Fashion Fest</a>
+                  <a href="/src/html/fashion.html" class="block px-4 py-2"
+                    >Fashion Fest</a
+                  >
                   <a href="/src/html/carnival.html" class="block px-4 py-2"
                     >Carnival</a
                   >
-                  <a href="/src/html/football.html" class="block px-4 py-2">Football and games </a>
-                  <a href="/src/html/books.html" class="block px-4 py-2">Book launch and awards </a>
+                  <a href="/src/html/football.html" class="block px-4 py-2"
+                    >Football and games
+                  </a>
+                  <a href="/src/html/books.html" class="block px-4 py-2"
+                    >Book launch and awards
+                  </a>
                 </div>
               </div>
               <!-- <a href="#" class="hover:text-gray-300">Personalities</a> -->
-              <a href="/src/html/collage.html" class="hover:text-gray-300">Collage</a>
-            
-              <a href="/src/html/contact.html" class="hover:text-gray-300"
-                >Contact</a
+              <a href="/src/html/collage.html" class="hover:text-gray-300"
+                >Collage</a
               >
+  
+              <a href="/contact.html">Contact</a>
             </nav>
           </div>
         </header>
@@ -304,68 +320,101 @@
         >
           Don’t miss out on this extraordinary night! Purchase your tickets now.
         </p>
+       
         <a
-          href="#"
-          class="bg-indigo-600 hover:bg-indigo-800 text-white py-3 px-8 rounded-lg text-lg transition duration-300"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-          >Buy Tickets</a
-        >
+    href="#"
+    class="bg-indigo-600 hover:bg-indigo-800 text-white py-3 px-8 rounded-lg text-lg transition duration-300"
+    data-aos="zoom-in"
+    data-aos-delay="400"
+    id="buy-tickets-button"
+  > Get your Tickets </a> 
       </div>
-    </section>
 
+      <div 
+    id="popup-modal" 
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+  >
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm text-center">
+      <h2 class="text-2xl font-bold mb-4">It's Free!</h2>
+      <p class="text-gray-600 mb-6">No need to buy tickets, just show up and enjoy the event!</p>
+      <button
+        id="close-popup"
+        class="bg-red-600 hover:bg-red-800 text-white py-2 px-4 rounded-lg transition duration-300"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Get button and popup elements
+    const buyTicketsButton = document.getElementById('buy-tickets-button');
+    const popupModal = document.getElementById('popup-modal');
+    const closePopupButton = document.getElementById('close-popup');
+
+    // Show popup on button click
+    buyTicketsButton.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      popupModal.classList.remove('hidden');
+    });
+
+    // Close popup on close button click
+    closePopupButton.addEventListener('click', () => {
+      popupModal.classList.add('hidden');
+    });
+
+    // Optional: Close popup if user clicks outside the modal
+    popupModal.addEventListener('click', (e) => {
+      if (e.target === popupModal) {
+        popupModal.classList.add('hidden');
+      }
+    });
+  </script>
+
+    </section>
     <footer class="bg-[#1D1D2F]">
-        <div class="w-full p-5 sm:p-10">
-          <!-- Footer Navigation -->
-          <div class="pt-3">
-            <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                  >Collage</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                  >Sponsors</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                  >Contact Us</a
-                >
-              </li>
-            </ul>
-          </div>
+      <div class="w-full p-5 sm:p-10">
+        <!-- Footer Navigation -->
+        <div class="pt-3">
+          <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
+            <li>
+              <a
+                href="./index.html"
+                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Home</a
+              >
+            </li>
+            <li>
+          
+            <li>
+              <a
+                href="/src/html/collage.html"
+                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Collage</a
+              >
+            </li>
+         
+            <li>
+              <a
+                href="./contact.html"
+                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
         </div>
-      
-        <!-- Footer Bottom -->
-        <div class="p-3 sm:p-5 text-center">
-          <p class="text-white text-sm sm:text-base">
-            Copyright &copy; 2023; 
-            <span class="uppercase tracking-wide font-normal opacity-70">SuruFest</span>
-          </p>
-        </div>
-      </footer>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="p-3 sm:p-5 text-center">
+        <p class="text-white text-sm sm:text-base">
+          Copyright &copy; 2023;
+          <span class="uppercase tracking-wide font-normal opacity-70"
+            >SuruFest</span
+          >
+        </p>
+      </div>
+    </footer>
       
     <script>
       // Initialize AOS animations

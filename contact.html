@@ -44,20 +44,17 @@
 
   <body class="bg-gray-50 font-sans">
     <!-- Header -->
-
-    <!-- Header -->
-    <header class="bg-[#9075FF] text-white">
+    <header class="bg-[#e9e8e8] text-black">
       <div class="container mx-auto flex justify-between items-center p-5">
         <!-- Logo -->
         <div class="text-3xl font-bold">
-          <a href="#">
+          <a href="index.html">
             <img src="/img/logo.png" alt="Logo" class="h-10" />
           </a>
         </div>
 
         <!-- Links for desktop -->
         <nav class="hidden lg:flex space-x-8 items-center">
-          <a href="#" class="hover:text-gray-300">About</a>
           <div class="relative group">
             <!-- Event dropdown for desktop -->
             <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -79,16 +76,22 @@
             <div
               class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
             >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
                 >Music Concert</a
               >
-              <a href="/jj.html" class="block px-4 py-2 hover:bg-indigo-100"
+              <a
+                href="/src/html/Personalities.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
                 >Symposium/Personalities</a
               >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              <a
+                href="/src/html/music.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
                 >Music and concert</a
               >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              <a
+                href="/src/html/fashion.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
                 >Fashion Fest</a
               >
               <a
@@ -96,17 +99,23 @@
                 class="block px-4 py-2 hover:bg-indigo-100"
                 >Carnival</a
               >
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              <a
+                href="/src/html/fashion.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
                 >Football and games
               </a>
-              <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
+              <a
+                href="/src/html/books.html"
+                class="block px-4 py-2 hover:bg-indigo-100"
                 >Book launch and awards
               </a>
             </div>
           </div>
-          <a href="#" class="hover:text-gray-300">Resource</a>
-          <a href="#" class="hover:text-gray-300">Sponsors</a>
-          <a href="#" class="hover:text-gray-300">Contact</a>
+
+          <a href="/src/html/Personalities.html">Personalities</a>
+          <a href="/src/html/collage.html ">Collage</a>
+          <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
+          <a href="./contact.html">Contact</a>
         </nav>
 
         <!-- Hamburger icon for mobile -->
@@ -132,10 +141,9 @@
       <!-- Mobile menu -->
       <div
         id="mobile-menu"
-        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-indigo-600"
+        class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
       >
-        <nav class="flex flex-col space-y-2 p-4 text-white">
-          <a href="#" class="hover:text-gray-300">About</a>
+        <nav class="flex flex-col space-y-2 p-4 text-black">
           <!-- Event dropdown always visible for mobile -->
           <div class="relative">
             <div
@@ -158,16 +166,33 @@
             </div>
             <!-- Dropdown always visible in mobile -->
             <div class="flex flex-col space-y-1 pl-4 mt-2">
-              <a href="#" class="hover:text-gray-300">Football</a>
-              <a href="#" class="hover:text-gray-300">Basketball</a>
-              <a href="#" class="hover:text-gray-300">Table Tennis</a>
-              <a href="#" class="hover:text-gray-300">Relay Race</a>
-              <a href="#" class="hover:text-gray-300">Volleyball</a>
+              <a href="./src/html/music.html" class="block px-4 py-2"
+                >Music Concert</a
+              >
+              <a href="/src/html/Personalities.html" class="block px-4 py-2"
+                >Symposium/Personalities</a
+              >
+
+              <a href="/src/html/fashion.html" class="block px-4 py-2"
+                >Fashion Fest</a
+              >
+              <a href="/src/html/carnival.html" class="block px-4 py-2"
+                >Carnival</a
+              >
+              <a href="/src/html/football.html" class="block px-4 py-2"
+                >Football and games
+              </a>
+              <a href="/src/html/books.html" class="block px-4 py-2"
+                >Book launch and awards
+              </a>
             </div>
           </div>
-          <a href="#" class="hover:text-gray-300">Resource</a>
-          <a href="#" class="hover:text-gray-300">Sponsors</a>
-          <a href="#" class="hover:text-gray-300">Contact</a>
+          <!-- <a href="#" class="hover:text-gray-300">Personalities</a> -->
+          <a href="/src/html/collage.html" class="hover:text-gray-300"
+            >Collage</a
+          >
+
+          <a href="/contact.html">Contact</a>
         </nav>
       </div>
     </header>
@@ -407,6 +432,50 @@
         });
       });
     </script>
+
+<footer class="bg-[#1D1D2F]">
+  <div class="w-full p-5 sm:p-10">
+    <!-- Footer Navigation -->
+    <div class="pt-3">
+      <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
+        <li>
+          <a
+            href="./index.html"
+            class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+            >Home</a
+          >
+        </li>
+        <li>
+      
+        <li>
+          <a
+            href="/src/html/collage.html"
+            class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+            >Collage</a
+          >
+        </li>
+     
+        <li>
+          <a
+            href="./contact.html"
+            class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="p-3 sm:p-5 text-center">
+    <p class="text-white text-sm sm:text-base">
+      Copyright &copy; 2023;
+      <span class="uppercase tracking-wide font-normal opacity-70"
+        >SuruFest</span
+      >
+    </p>
+  </div>
+</footer>
 
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
