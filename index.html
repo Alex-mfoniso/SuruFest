@@ -20,6 +20,7 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="bower_components/aos/dist/aos.css" /> -->
+
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </head>
   <style>
@@ -184,7 +185,6 @@
 
           <!-- Links for desktop -->
           <nav class="hidden lg:flex space-x-8 items-center">
-           
             <div class="relative group">
               <!-- Event dropdown for desktop -->
               <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -209,13 +209,19 @@
                 <a href="#" class="block px-4 py-2 hover:bg-indigo-100"
                   >Music Concert</a
                 >
-                <a href="/src/html/Personalities.html" class="block px-4 py-2 hover:bg-indigo-100"
+                <a
+                  href="/src/html/Personalities.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
                   >Symposium/Personalities</a
                 >
-                <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
+                <a
+                  href="/src/html/music.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
                   >Music and concert</a
                 >
-                <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                <a
+                  href="/src/html/fashion.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
                   >Fashion Fest</a
                 >
                 <a
@@ -223,16 +229,20 @@
                   class="block px-4 py-2 hover:bg-indigo-100"
                   >Carnival</a
                 >
-                <a href="/src/html/fashion.html" class="block px-4 py-2 hover:bg-indigo-100"
+                <a
+                  href="/src/html/fashion.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
                   >Football and games
                 </a>
-                <a href="/src/html/books.html" class="block px-4 py-2 hover:bg-indigo-100"
+                <a
+                  href="/src/html/books.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
                   >Book launch and awards
                 </a>
               </div>
             </div>
-           
-            <a href="#" >Personalities</a>
+
+            <a href="#">Personalities</a>
             <a href="/src/html/collage.html ">Collage</a>
             <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
             <a href="#">Contact</a>
@@ -264,7 +274,6 @@
           class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
         >
           <nav class="flex flex-col space-y-2 p-4 text-black">
-          
             <!-- Event dropdown always visible for mobile -->
             <div class="relative">
               <div
@@ -287,25 +296,33 @@
               </div>
               <!-- Dropdown always visible in mobile -->
               <div class="flex flex-col space-y-1 pl-4 mt-2">
-                <a href="#" class="block px-4 py-2">Music Concert</a>
+                <a href="./src/html/music.html" class="block px-4 py-2"
+                  >Music Concert</a
+                >
                 <a href="/src/html/Personalities.html" class="block px-4 py-2"
                   >Symposium/Personalities</a
                 >
 
-                <a href="/src/html/fashion.html" class="block px-4 py-2">Fashion Fest</a>
+                <a href="/src/html/fashion.html" class="block px-4 py-2"
+                  >Fashion Fest</a
+                >
                 <a href="/src/html/carnival.html" class="block px-4 py-2"
                   >Carnival</a
                 >
-                <a href="/src/html/football.html" class="block px-4 py-2">Football and games </a>
-                <a href="/src/html/books.html" class="block px-4 py-2">Book launch and awards </a>
+                <a href="/src/html/football.html" class="block px-4 py-2"
+                  >Football and games
+                </a>
+                <a href="/src/html/books.html" class="block px-4 py-2"
+                  >Book launch and awards
+                </a>
               </div>
             </div>
             <!-- <a href="#" class="hover:text-gray-300">Personalities</a> -->
-            <a href="/src/html/collage.html" class="hover:text-gray-300">Collage</a>
-          
-            <a href="/contact.html"
-              >Contact</a
+            <a href="/src/html/collage.html" class="hover:text-gray-300"
+              >Collage</a
             >
+
+            <a href="/contact.html">Contact</a>
           </nav>
         </div>
       </header>
@@ -343,88 +360,212 @@
         }
       </style>
 
-      <section
-        aria-label="Newest Photos"
-        class="bg-[#EFF0F6] p-4 sm:p-8 relative"
-      >
-        <div class="relative overflow-hidden rounded-[25px] parent-container">
-          <!-- Overlay -->
-          <div
-            class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
-          ></div>
+<section
+aria-label="Newest Photos"
+class="bg-[#EFF0F6] p-[2rem] relative"
+>
+<div class="relative overflow-hidden h-screen">
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
+  ></div>
+  <!-- Slide Up Text -->
+  <div
+    class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up"
+  >
+    <br />
 
-          <!-- Slide-Up Text -->
-          <div
-            class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up px-4"
-          >
-            <div class="text-2xl md:text-4xl lg:text-5xl font-bold text-center">
-              <span id="typewriter-text"></span>
-              <span
-                class="border-r-2 border-[#40405D] animate-blink ml-1"
-              ></span>
-            </div>
-          </div>
+    <div class="md:text-3xl lg:text-4xl text-[45px] font-bold">
+      <span id="typewriter-text"></span>
+      <span
+        class="border-r-2 border-[#40405D] animate-blink ml-1"
+      ></span>
+      <!-- Blinking cursor -->
+    </div>
+  </div>
 
-          <!-- Navigation Buttons -->
-          <button
-            class="absolute z-30 top-1/2 left-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
-            id="prev-button"
-          >
-            <img
-              src="https://img.icons8.com/ios/50/less-than-2.png"
-              alt="Previous"
-              class="w-8 h-8 md:w-12 md:h-12"
-            />
-          </button>
-          <button
-            class="absolute z-30 top-1/2 right-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
-            id="next-button "
-          >
-            <img
-              src="https://img.icons8.com/ios/50/more-than-2.png"
-              alt="Next"
-              class="w-8 h-8 md:w-12 md:h-12"
-            />
-          </button>
+  <!-- Slider Content -->
+  <button
+    class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+    id="prev-button"
+  >
+    <img
+      width="50"
+      height="50"
+      src="https://img.icons8.com/ios/50/less-than-2.png"
+      alt="less-than-2"
+    />
+  </button>
+  <button
+    class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+    id="next-button"
+  >
+    <img
+      width="50"
+      height="50"
+      src="https://img.icons8.com/ios/50/more-than-2.png"
+      alt="more-than-2"
+    />
+  </button>
+  <ul
+    class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
+    id="slider"
+  >
+    <li
+      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+      data-active
+    >
+      <img
+        src="/img/mainpic.png"
+        alt="Nature Image #1"
+        class="block w-screen object-cover object-center h-full rounded-[25px]"
+      />
+    </li>
+    <li
+      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+    >
+      <img
+        src="./img/insta.png"
+        alt="Nature Image #2"
+        class="block w-screen object-cover object-center h-full rounded-[25px]"
+      />
+    </li>
+    <li
+      class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-200 delay-200"
+    >
+      <img
+        src="./img/kids.png"
+        alt="Nature Image #3"
+        class="block w-screen object-cover object-center h-full rounded-[25px]"
+      />
+    </li>
+  </ul>
+</div>
+</section>
+<script>
+  
 
-          <!-- Slider Content -->
-          <ul
-            class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
-            id="slider"
-          >
-            <li
-              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-              data-active
-            >
-              <img
-                src="/img/mainpic.png"
-                alt="Nature Image #1"
-                class="block w-full h-full object-contain rounded-[25px]"
-              />
-            </li>
-            <li
-              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-            >
-              <img
-                src="./img/insta.png"
-                alt="Nature Image #2"
-                class="block w-full h-full object-contain rounded-[25px]"
-              />
-            </li>
-            <li
-              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-            >
-              <img
-                src="./img/kids.png"
-                alt="Nature Image #3"
-                class="block w-full h-full object-contain rounded-[25px]"
-              />
-            </li>
-          </ul>
-        </div>
-      </section>
+const slider = document.getElementById('slider');
+const slides = slider.children;
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
+
+let currentIndex = 0;
+
+function updateSlideIndex(index) {
+  Array.prototype.forEach.call(slides, function(slide, i) {
+    if (i === index) {
+      slide.classList.add('opacity-100');
+      slide.classList.remove('opacity-0');
+    } else {
+      slide.classList.remove('opacity-100');
+      slide.classList.add('opacity-0');
+    }
+  });
+}
+
+prevButton.addEventListener('click', function() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateSlideIndex(currentIndex);
+  }
+});
+
+nextButton.addEventListener('click', function() {
+  if (currentIndex < slides.length - 1) {
+    currentIndex++;
+    updateSlideIndex(currentIndex);
+  }
+});
+
+// Auto-slide functionality
+setInterval(function() {
+  if (currentIndex < slides.length - 1) {
+    currentIndex++;
+    updateSlideIndex(currentIndex);
+  } else {
+    currentIndex = 0;
+    updateSlideIndex(currentIndex);
+  }
+}, 3000); // Change the interval time as needed
+
+// Initialize the first slide
+slides[0].classList.add('opacity-100');
+slides[0].classList.remove('opacity-0');
+
+    // Set the target date to December 15 of the current year
+    const targetDate = new Date(new Date().getFullYear(), 11, 15, 0, 0, 0).getTime();
+
+    // Update the countdown every second
+    const countdownFunction = setInterval(() => {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      // Time calculations for days, hours, minutes, and seconds
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      // Display the result in the corresponding elements
+      document.getElementById('days-value').innerText = days;
+      document.getElementById('hours-value').innerText = hours;
+      document.getElementById('minutes-value').innerText = minutes;
+      document.getElementById('seconds-value').innerText = seconds;
+
+      // If the countdown is finished, display "Join the Fun!"
+      if (timeLeft < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById('countdown').classList.add('hidden');
+        document.getElementById('message').classList.remove('hidden');
+      }
+    }, 1000);
+
+// sponsors
+    // var copy = document.querySelector(".logos-slide").cloneNode(true);
+    // document.querySelector(".logos").appendChild(copy);
 
 
+  const texts = [
+    "Surulere Sparkle Fest 2024",
+    "The best event experience you'll ever have!",
+    "Awards, Competitions, and Talent Hunts!",
+    "Join us for an unforgettable adventure!"
+  ];
+
+  
+  let index = 0;  // Current text index
+  let charIndex = 0;  // Character index for current text
+  let isDeleting = false;  // Whether the text is being erased
+  const typingSpeed = 100;  // Speed for typing characters
+  const erasingSpeed = 50;  // Speed for erasing characters
+  const delayBetweenTexts = 2000;  // Delay before starting to erase
+
+  function typeEffect() {
+    const currentText = texts[index];
+    const typewriterElement = document.getElementById("typewriter-text");
+
+    if (isDeleting) {
+      typewriterElement.innerHTML = currentText.substring(0, charIndex--);
+    } else {
+      typewriterElement.innerHTML = currentText.substring(0, charIndex++);
+    }
+
+    if (!isDeleting && charIndex === currentText.length) {
+      setTimeout(() => isDeleting = true, delayBetweenTexts);  // Pause before starting to erase
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length;  // Move to the next text
+    }
+
+    const delay = isDeleting ? erasingSpeed : typingSpeed;
+    setTimeout(typeEffect, delay);  // Recursive typing function
+  }
+
+  // Start typing effect when the page loads
+  window.onload = typeEffect;
+
+</script>
       <div class="scrolling-container" id="text-scrolling">
         <div
           class="scrolling-text--inner direction-left flex items-center whitespace-nowrap font-semibold text-[#1D1D2F] py-2 relative overflow-hidden z-10"
@@ -485,7 +626,7 @@
           <h1 class="text-3xl sm:text-4xl font-bold mb-6">
             Countdown to December 15
           </h1>
-    
+
           <!-- Countdown Values -->
           <div class="flex flex-wrap justify-center gap-8">
             <div id="days" class="text-center">
@@ -510,7 +651,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- Message -->
         <p
           id="message"
@@ -519,42 +660,47 @@
           Join the Fun!
         </p>
       </div>
-    
-      
-      
+
       <script>
-  
-    // Set the target date to December 15 of the current year
-    const targetDate = new Date(new Date().getFullYear(), 11, 15, 0, 0, 0).getTime();
+        // Set the target date to December 15 of the current year
+        const targetDate = new Date(
+          new Date().getFullYear(),
+          11,
+          15,
+          0,
+          0,
+          0
+        ).getTime();
 
-    // Update the countdown every second
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
+        // Update the countdown every second
+        const countdownFunction = setInterval(() => {
+          const now = new Date().getTime();
+          const timeLeft = targetDate - now;
 
-      // Time calculations for days, hours, minutes, and seconds
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+          // Time calculations for days, hours, minutes, and seconds
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-      // Display the result in the corresponding elements
-      document.getElementById('days-value').innerText = days;
-      document.getElementById('hours-value').innerText = hours;
-      document.getElementById('minutes-value').innerText = minutes;
-      document.getElementById('seconds-value').innerText = seconds;
+          // Display the result in the corresponding elements
+          document.getElementById("days-value").innerText = days;
+          document.getElementById("hours-value").innerText = hours;
+          document.getElementById("minutes-value").innerText = minutes;
+          document.getElementById("seconds-value").innerText = seconds;
 
-      // If the countdown is finished, display "Join the Fun!"
-      if (timeLeft < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById('countdown').classList.add('hidden');
-        document.getElementById('message').classList.remove('hidden');
-      }
-    }, 1000);
+          // If the countdown is finished, display "Join the Fun!"
+          if (timeLeft < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown").classList.add("hidden");
+            document.getElementById("message").classList.remove("hidden");
+          }
+        }, 1000);
       </script>
-
-
-      
 
       <div class="scrolling-container" id="text-scrolling">
         <div
@@ -696,93 +842,88 @@
         </div>
       </section>
 
- <style>
-  /* Section: Full-screen height for desktop, dynamic for smaller screens */
-.video-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  /* To make video stand out */
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  border-radius: 25px;
-}
+      <style>
+        /* Section: Full-screen height for desktop, dynamic for smaller screens */
+        .video-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          /* To make video stand out */
+          overflow: hidden;
+          padding: 0;
+          margin: 0;
+          border-radius: 25px;
+        }
 
-/* Video Container: Ensure it fits well across all screen sizes */
-.video-container {
-  width: 100%; /* Takes full width */
-  height: 100%; /* Takes full height */
-  position: relative;
-}
+        /* Video Container: Ensure it fits well across all screen sizes */
+        .video-container {
+          width: 100%; /* Takes full width */
+          height: 100%; /* Takes full height */
+          position: relative;
+        }
 
-/* Video: Ensure full responsiveness */
-video {
-  width: 100%; 
-  height: 100%;
-  object-fit: contain; /* Ensure the entire video is visible */
-  display: block;
-}
+        /* Video: Ensure full responsiveness */
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; /* Ensure the entire video is visible */
+          display: block;
+        }
 
-/* Smaller screens handling */
-@media (max-width: 768px) {
-  .video-section {
-    height: auto; /* Allow the section height to adjust for smaller screens */
-    min-height: 60vh; /* Ensures it's visible without being too large */
-  }
+        /* Smaller screens handling */
+        @media (max-width: 768px) {
+          .video-section {
+            height: auto; /* Allow the section height to adjust for smaller screens */
+            min-height: 60vh; /* Ensures it's visible without being too large */
+          }
 
-  .video-container {
-    height: auto;
-  }
+          .video-container {
+            height: auto;
+          }
 
-  video {
-    object-fit: contain; /* Show full video, adjusted to screen size */
-   
-  }
-}
-
- </style>
-     <section class="video-section">
-      <div class="video-container">
-        <video id="scrollVideo" muted playsinline loop>
-          <source src="src/vid/dignitries.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          video {
+            object-fit: contain; /* Show full video, adjusted to screen size */
+          }
+        }
+      </style>
+      <section class="video-section">
+        <div class="video-container">
+          <video id="scrollVideo" muted playsinline loop>
+            <source src="src/vid/dignitries.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+      <div class="flex justify-center items-center p-[30px]">
+        <a
+          href="/src/html/collage.html"
+          class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+        >
+          Learn More
+        </a>
       </div>
 
-     
-    </section>
-    <div class="flex justify-center items-center  p-[30px]">
-      <a
-        href="/src/html/collage.html"
-        class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
-      >
-        Learn More
-      </a>
-    </div>
-    
-   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("scrollVideo");
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const video = document.getElementById("scrollVideo");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          video.play(); // Play video when visible
-        } else {
-          video.pause(); // Pause video when not visible
-        }
-      });
-    },
-    { threshold: 0.7 } // Play when 70% of the section is visible
-  );
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  video.play(); // Play video when visible
+                } else {
+                  video.pause(); // Pause video when not visible
+                }
+              });
+            },
+            { threshold: 0.7 } // Play when 70% of the section is visible
+          );
 
-  observer.observe(document.querySelector(".video-section"));
-});
-
-   </script>
+          observer.observe(document.querySelector(".video-section"));
+        });
+      </script>
       <div class="flex items-center justify-center">
         <p class="text-center text-[#494957] text-[40px]">Our sponspors</p>
       </div>
@@ -822,7 +963,6 @@ video {
       <div class="text-2xl md:text-3xl lg:text-4xl">
         <span id="typewriter-text"></span>
         <span class="border-r-2 border-white animate-blink ml-1"></span>
-      
       </div>
       <footer class="bg-[#1D1D2F]">
         <div class="w-full p-5 sm:p-10">
@@ -867,16 +1007,18 @@ video {
             </ul>
           </div>
         </div>
-      
+
         <!-- Footer Bottom -->
         <div class="p-3 sm:p-5 text-center">
           <p class="text-white text-sm sm:text-base">
-            Copyright &copy; 2023; 
-            <span class="uppercase tracking-wide font-normal opacity-70">SuruFest</span>
+            Copyright &copy; 2023;
+            <span class="uppercase tracking-wide font-normal opacity-70"
+              >SuruFest</span
+            >
           </p>
         </div>
       </footer>
-          </div>
+    </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -894,10 +1036,6 @@ video {
       }
     </script>
 
-
-
-<script>
-        
-</script>
+    <script></script>
   </body>
 </html>
