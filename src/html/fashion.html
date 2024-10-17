@@ -46,6 +46,8 @@
 
         <!-- Links for desktop -->
         <nav class="hidden lg:flex space-x-8 items-center">
+          <a href="/index.html" class="block px-4 py-2"
+          >Home</a>
           <div class="relative group">
             <!-- Event dropdown for desktop -->
             <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -67,9 +69,7 @@
             <div
               class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
             >
-              <a
-                href="/src/html/music.html"
-                class="block px-4 py-2 hover:bg-indigo-100"
+              <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
                 >Music Concert</a
               >
               <a
@@ -108,7 +108,7 @@
           <a href="/src/html/Personalities.html">Personalities</a>
           <a href="/src/html/collage.html ">Collage</a>
           <!-- <a href="#" class="hover:text-gray-300">Sponsors</a> -->
-          <a href="./contact.html">Contact</a>
+          <a href="/contact.html">Contact</a>
         </nav>
 
         <!-- Hamburger icon for mobile -->
@@ -137,6 +137,8 @@
         class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
       >
         <nav class="flex flex-col space-y-2 p-4 text-black">
+          <a href="/index.html" class="block px-4 py-2"
+          >Home</a>
           <!-- Event dropdown always visible for mobile -->
           <div class="relative">
             <div
@@ -159,7 +161,7 @@
             </div>
             <!-- Dropdown always visible in mobile -->
             <div class="flex flex-col space-y-1 pl-4 mt-2">
-              <a href="./src/html/music.html" class="block px-4 py-2"
+              <a href="/src/html/music.html" class="block px-4 py-2"
                 >Music Concert</a
               >
               <a href="/src/html/Personalities.html" class="block px-4 py-2"
@@ -277,6 +279,41 @@
             <h3 class="text-xl font-semibold mb-2">Contemporary Clothing</h3>
             <p>A showcase of the latest trends in casual and formal wear.</p>
           </div>
+          <div class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center">
+            <img
+              src="/src/img/street.jpg"
+              alt="Clothing"
+              class="rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Street Style Collection</h3>
+            <p>
+              Discover edgy and stylish urban wear that defines the essence of street fashion.
+            </p>
+          </div>
+          <div class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center">
+            <img
+              src="/src/img/evening.jpg"
+              alt="Clothing"
+              class="rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Elegant Evening Wear</h3>
+            <p>
+              A collection of sophisticated gowns and suits, perfect for glamorous nights out.
+            </p>
+          </div>
+          
+          <div class="hover-card p-6 rounded-lg shadow-md bg-gray-50 text-center">
+            <img
+              src="/src/img/cultural.jpg"
+              alt="Clothing"
+              class="rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Cultural Fashion Fusion</h3>
+            <p>
+              Celebrate diverse styles with outfits that blend traditional and modern influences.
+            </p>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -289,42 +326,42 @@
         </h2>
         <div id="gallery" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p1.jpg"
             class="rounded-lg shadow-md gallery-item"
             alt="Gallery Image 1"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p2.jpg"
             class="rounded-lg shadow-md gallery-item"
             alt="Gallery Image 2"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p3.jpg"
             class="rounded-lg shadow-md gallery-item"
             alt="Gallery Image 3"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p4.jpg"
             class="rounded-lg shadow-md gallery-item"
             alt="Gallery Image 4"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p5.jpg"
             class="rounded-lg shadow-md gallery-item hidden"
             alt="Gallery Image 5"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p6.jpg"
             class="rounded-lg shadow-md gallery-item hidden"
             alt="Gallery Image 6"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p7.jpg"
             class="rounded-lg shadow-md gallery-item hidden"
             alt="Gallery Image 7"
           />
           <img
-            src="/src/img/fashion.jpg"
+            src="/src/img/p8.jpg"
             class="rounded-lg shadow-md gallery-item hidden"
             alt="Gallery Image 8"
           />
@@ -357,61 +394,68 @@
           class="w-full h-48 object-cover"
         />
         <div class="p-6">
-          <h2 class="text-xl font-bold mb-2">Card Title 1</h2>
+          <!-- <h2 class="text-xl font-bold mb-2">Card Title 1</h2> -->
           <p class="text-gray-700 mb-4">
-            click on the button to become one of our fashion designer, for
-            mainlander only.
+            Click on the button to become one of our fashion designers, for
+            mainlanders only.
           </p>
-          <button
-            class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
-            onclick="sendEmail('example1@gmail.com')"
-          >
-            Contact Us
-          </button>
+          <div class="flex justify-center"> <!-- Centering the button -->
+            <button
+              class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
+              onclick="sendEmail('example1@gmail.com')"
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
+      
+<!-- Card 2 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+  <img
+    src="/src/img/mainfashion.jpg"
+    alt="Card 2 Image"
+    class="w-full h-48 object-cover"
+  />
+  <div class="p-6">
+    <!-- <h2 class="text-xl font-bold mb-2">Card Title 2</h2> -->
+    <p class="text-gray-700 mb-4">
+      Click on the button to become one of our fashion designers.
+    </p>
+    <div class="flex justify-center"> <!-- Centering the button -->
+      <button
+        class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
+        onclick="sendEmail('example2@gmail.com')"
+      >
+        Contact Us
+      </button>
+    </div>
+  </div>
+</div>
 
-      <!-- Card 2 -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img
-          src="/src/img/mainfashion.jpg"
-          alt="Card 2 Image"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-6">
-          <h2 class="text-xl font-bold mb-2">Card Title 2</h2>
-          <p class="text-gray-700 mb-4">
-            click on the button to become one of our fashion designer.
-          </p>
-          <button
-            class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
-            onclick="sendEmail('example2@gmail.com')"
-          >
-            Contact Us
-          </button>
-        </div>
-      </div>
+<!-- Card 3 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+  <img
+    src="/src/img/model.jpg"
+    alt="Card 3 Image"
+    class="w-full h-48 object-cover"
+  />
+  <div class="p-6">
+    <!-- <h2 class="text-xl font-bold mb-2">Card Title 3</h2> -->
+    <p class="text-gray-700 mb-4">
+      Click on the button to become one of our models.
+    </p>
+    <div class="flex justify-center"> <!-- Centering the button -->
+      <button
+        class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
+        onclick="sendEmail('example3@gmail.com')"
+      >
+        Contact Us
+      </button>
+    </div>
+  </div>
+</div>
 
-      <!-- Card 3 -->
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img
-          src="/src/img/model.jpg"
-          alt="Card 3 Image"
-          class="w-full h-48 object-cover"
-        />
-        <div class="p-6">
-          <h2 class="text-xl font-bold mb-2">Card Title 3</h2>
-          <p class="text-gray-700 mb-4">
-            click on the button to become on of our model.
-          </p>
-          <button
-            class="bg-indigo-600 hover:bg-indigo-800 text-white py-2 px-4 rounded transition duration-300"
-            onclick="sendEmail('example3@gmail.com')"
-          >
-            Contact Us
-          </button>
-        </div>
-      </div>
     </div>
 
     <script>
@@ -443,49 +487,49 @@
       });
     </script>
 
-    <footer class="bg-[#1D1D2F]">
-      <div class="w-full p-5 sm:p-10">
-        <!-- Footer Navigation -->
-        <div class="pt-3">
-          <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
-            <li>
-              <a
-                href="/index.html"
-                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                >Home</a
-              >
-            </li>
-            <li></li>
-
-            <li>
-              <a
-                href="/src/html/collage.html"
-                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                >Collage</a
-              >
-            </li>
-
-            <li>
-              <a
-                href="/contact.html"
-                class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="p-3 sm:p-5 text-center">
-        <p class="text-white text-sm sm:text-base">
-          Developed By: Morakinyo Taylor
-          <span class="uppercase tracking-wide font-normal opacity-70"
-            >SuruFest</span
+<footer class="bg-[#1D1D2F]">
+  <div class="w-full p-5 sm:p-10">
+    <!-- Footer Navigation -->
+    <div class="pt-3">
+      <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
+        <li>
+          <a
+            href="/index.html"
+            class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+            >Home</a
           >
-        </p>
-      </div>
-    </footer>
+        </li>
+        <li></li>
+
+        <li>
+          <a
+            href="/src/html/collage.html"
+            class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+            >Collage</a
+          >
+        </li>
+
+        <li>
+          <a
+            href="/contact.html"
+            class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="p-3 sm:p-5 text-center">
+    <p class="text-white text-sm sm:text-base">
+      Developed By: Morakinyo Taylor
+      <span class="uppercase tracking-wide font-normal opacity-70"
+        >SuruFest</span
+      >
+    </p>
+  </div>
+</footer>
 
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

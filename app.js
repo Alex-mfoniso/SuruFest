@@ -48,33 +48,44 @@ setInterval(function() {
 slides[0].classList.add('opacity-100');
 slides[0].classList.remove('opacity-0');
 
-    // Set the target date to December 15 of the current year
-    const targetDate = new Date(new Date().getFullYear(), 11, 15, 0, 0, 0).getTime();
-
-    // Update the countdown every second
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
-
-      // Time calculations for days, hours, minutes, and seconds
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      // Display the result in the corresponding elements
-      document.getElementById('days-value').innerText = days;
-      document.getElementById('hours-value').innerText = hours;
-      document.getElementById('minutes-value').innerText = minutes;
-      document.getElementById('seconds-value').innerText = seconds;
-
-      // If the countdown is finished, display "Join the Fun!"
-      if (timeLeft < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById('countdown').classList.add('hidden');
-        document.getElementById('message').classList.remove('hidden');
-      }
-    }, 1000);
+        // Set the target date to December 10 of the current year
+        const targetDate = new Date(
+          new Date().getFullYear(),
+          11, // December (0-based index)
+          10, // 10th day
+          0,  // hours
+          0,  // minutes
+          0   // seconds
+      ).getTime();
+  
+      // Update the countdown every second
+      const countdownFunction = setInterval(() => {
+          const now = new Date().getTime();
+          const timeLeft = targetDate - now;
+  
+          // Time calculations for days, hours, minutes, and seconds
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+              (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+              (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  
+          // Display the result in the corresponding elements
+          document.getElementById("days-value").innerText = days;
+          document.getElementById("hours-value").innerText = hours;
+          document.getElementById("minutes-value").innerText = minutes;
+          document.getElementById("seconds-value").innerText = seconds;
+  
+          // If the countdown is finished, display "Join the Fun!"
+          if (timeLeft < 0) {
+              clearInterval(countdownFunction);
+              document.getElementById("countdown").classList.add("hidden");
+              document.getElementById("message").classList.remove("hidden");
+          }
+      }, 1000);
 
 // sponsors
     // var copy = document.querySelector(".logos-slide").cloneNode(true);

@@ -23,8 +23,11 @@
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <!-- google accent -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9425803963698310"
-    crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9425803963698310"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <style>
     @keyframes slide-up {
@@ -188,6 +191,7 @@
 
           <!-- Links for desktop -->
           <nav class="hidden lg:flex space-x-8 items-center">
+            <a href="/index.html" class="block px-4 py-2">Home</a>
             <div class="relative group">
               <!-- Event dropdown for desktop -->
               <button class="flex items-center space-x-1 hover:text-gray-300">
@@ -209,7 +213,9 @@
               <div
                 class="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg py-2 group-hover:block hidden z-10"
               >
-                <a href="/src/html/music.html" class="block px-4 py-2 hover:bg-indigo-100"
+                <a
+                  href="/src/html/music.html"
+                  class="block px-4 py-2 hover:bg-indigo-100"
                   >Music Concert</a
                 >
                 <a
@@ -277,6 +283,7 @@
           class="lg:hidden max-h-0 overflow-hidden menu-transition bg-[#dbd7d7]"
         >
           <nav class="flex flex-col space-y-2 p-4 text-black">
+            <a href="/index.html" class="block px-4 py-2">Home</a>
             <!-- Event dropdown always visible for mobile -->
             <div class="relative">
               <div
@@ -299,7 +306,7 @@
               </div>
               <!-- Dropdown always visible in mobile -->
               <div class="flex flex-col space-y-1 pl-4 mt-2">
-                <a href="./src/html/music.html" class="block px-4 py-2"
+                <a href="/src/html/music.html" class="block px-4 py-2"
                   >Music Concert</a
                 >
                 <a href="/src/html/Personalities.html" class="block px-4 py-2"
@@ -363,224 +370,171 @@
         }
       </style>
 
+      <section aria-label="Newest Photos" class="p-4 relative">
+        <div class="relative overflow-hidden rounded-[25px]">
+          <!-- Overlay -->
+          <div
+            class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
+          ></div>
 
-<section aria-label="Newest Photos" class="p-4 relative">
-  <div class="relative overflow-hidden rounded-[25px]">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"></div>
-
-    <!-- Slide Up Text -->
-    <div class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up">
-      <div class="md:text-3xl lg:text-4xl text-[30px] sm:text-[45px] font-bold">
-        <span id="typewriter-text"></span>
-        <span class="border-r-2 border-[#40405D] animate-blink ml-1"></span>
-      </div>
-    </div>
-
-    <!-- Slider Content -->
-    <ul class="m-0 p-0 list-none" id="slider">
-      <li class="slide opacity-0 transition-opacity duration-700" data-active>
-        <img src="/img/main1.jpg" alt="Image 1" class="block w-full object-contain" />
-      </li>
-      <li class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700">
-        <img src="/img/main2.jpg" alt="Image 2" class="block w-full object-contain" />
-      </li>
-      <li class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700">
-        <img src="/img/main3.jpg" alt="Image 3" class="block w-full object-contain" />
-      </li>
-    </ul>
-
-    <!-- Slider Navigation Buttons -->
-    <button
-      class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
-      id="prev-button"
-    >
-      <img width="50" height="50" src="https://img.icons8.com/ios/50/less-than-2.png" alt="Previous Slide" />
-    </button>
-    <button
-      class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
-      id="next-button"
-    >
-      <img width="50" height="50" src="https://img.icons8.com/ios/50/more-than-2.png" alt="Next Slide" />
-    </button>
-  </div>
-</section>
-
-<script>
-  
-
-const slider = document.getElementById('slider');
-const slides = slider.children;
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
-
-let currentIndex = 0;
-
-function updateSlideIndex(index) {
-  Array.prototype.forEach.call(slides, function(slide, i) {
-    if (i === index) {
-      slide.classList.add('opacity-100');
-      slide.classList.remove('opacity-0');
-    } else {
-      slide.classList.remove('opacity-100');
-      slide.classList.add('opacity-0');
-    }
-  });
-}
-
-prevButton.addEventListener('click', function() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlideIndex(currentIndex);
-  }
-});
-
-nextButton.addEventListener('click', function() {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-    updateSlideIndex(currentIndex);
-  }
-});
-
-// Auto-slide functionality
-setInterval(function() {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-    updateSlideIndex(currentIndex);
-  } else {
-    currentIndex = 0;
-    updateSlideIndex(currentIndex);
-  }
-}, 3000); // Change the interval time as needed
-
-// Initialize the first slide
-slides[0].classList.add('opacity-100');
-slides[0].classList.remove('opacity-0');
-
-    // Set the target date to December 15 of the current year
-    const targetDate = new Date(new Date().getFullYear(), 11, 15, 0, 0, 0).getTime();
-
-    // Update the countdown every second
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
-
-      // Time calculations for days, hours, minutes, and seconds
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      // Display the result in the corresponding elements
-      document.getElementById('days-value').innerText = days;
-      document.getElementById('hours-value').innerText = hours;
-      document.getElementById('minutes-value').innerText = minutes;
-      document.getElementById('seconds-value').innerText = seconds;
-
-      // If the countdown is finished, display "Join the Fun!"
-      if (timeLeft < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById('countdown').classList.add('hidden');
-        document.getElementById('message').classList.remove('hidden');
-      }
-    }, 1000);
-
-// sponsors
-    // var copy = document.querySelector(".logos-slide").cloneNode(true);
-    // document.querySelector(".logos").appendChild(copy);
-
-
-  const texts = [
-    "Surulere Sparkle Fest 2024",
-    "The best event experience you'll ever have!",
-    "Awards, Competitions, and Talent Hunts!",
-    "Join us for an unforgettable adventure!"
-  ];
-
-  
-  let index = 0;  // Current text index
-  let charIndex = 0;  // Character index for current text
-  let isDeleting = false;  // Whether the text is being erased
-  const typingSpeed = 100;  // Speed for typing characters
-  const erasingSpeed = 50;  // Speed for erasing characters
-  const delayBetweenTexts = 2000;  // Delay before starting to erase
-
-  function typeEffect() {
-    const currentText = texts[index];
-    const typewriterElement = document.getElementById("typewriter-text");
-
-    if (isDeleting) {
-      typewriterElement.innerHTML = currentText.substring(0, charIndex--);
-    } else {
-      typewriterElement.innerHTML = currentText.substring(0, charIndex++);
-    }
-
-    if (!isDeleting && charIndex === currentText.length) {
-      setTimeout(() => isDeleting = true, delayBetweenTexts);  // Pause before starting to erase
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      index = (index + 1) % texts.length;  // Move to the next text
-    }
-
-    const delay = isDeleting ? erasingSpeed : typingSpeed;
-    setTimeout(typeEffect, delay);  // Recursive typing function
-  }
-
-  // Start typing effect when the page loads
-  window.onload = typeEffect;
-
-</script>
-      <div class="scrolling-container" id="text-scrolling">
-        <div
-          class="scrolling-text--inner direction-left flex items-center whitespace-nowrap font-semibold text-[#1D1D2F] py-2 relative overflow-hidden z-10"
-          style="--marquee-speed: 30s"
-        >
-          <div class="scrolling-text flex">
-            <div class="scrolling-text--item px-8 outline-text--true">
-              <span>The clock is ticking</span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>You don't want to miss this</span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Dont forget the date</span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Tick tock tick tock</span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Dont forget the date</span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Your presence mattters </span>
+          <!-- Slide Up Text -->
+          <div
+            class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up"
+          >
+            <div
+              class="md:text-3xl lg:text-4xl text-[30px] sm:text-[45px] font-bold"
+            >
+              <span id="typewriter-text"></span>
+              <span
+                class="border-r-2 border-[#40405D] animate-blink ml-1"
+              ></span>
             </div>
           </div>
 
-          <div class="scrolling-text flex">
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Your presence mattters </span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>You don't want to miss this</span>
-            </div>
+          <!-- Slider Content -->
+          <ul class="m-0 p-0 list-none" id="slider">
+            <li
+              class="slide opacity-0 transition-opacity duration-700"
+              data-active
+            >
+              <img
+                src="/img/main1.jpg"
+                alt="Image 1"
+                class="block w-full object-contain"
+              />
+            </li>
+            <li
+              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700"
+            >
+              <img
+                src="/img/main2.jpg"
+                alt="Image 2"
+                class="block w-full object-contain"
+              />
+            </li>
+            <li
+              class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700"
+            >
+              <img
+                src="/img/main3.jpg"
+                alt="Image 3"
+                class="block w-full object-contain"
+              />
+            </li>
+          </ul>
 
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Dont forget the date</span>
-            </div>
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>Swap crypto.</span>
-            </div>
-
-            <div class="scrolling-text--item px-8 outline-text--true">
-              <span>The clock is ticking</span>
-            </div>
-
-            <div class="scrolling-text--item px-8 outline-text--false">
-              <span>You don't want to miss this</span>
-            </div>
-          </div>
+          <!-- Slider Navigation Buttons -->
+          <button
+            class="invisible absolute z-30 top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+            id="prev-button"
+          >
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/ios/50/less-than-2.png"
+              alt="Previous Slide"
+            />
+          </button>
+          <button
+            class="invisible absolute z-30 top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+            id="next-button"
+          >
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/ios/50/more-than-2.png"
+              alt="Next Slide"
+            />
+          </button>
         </div>
-      </div>
+      </section>
+
+      <script>
+        const slider = document.getElementById("slider");
+        const slides = slider.children;
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+
+        let currentIndex = 0;
+
+        function updateSlideIndex(index) {
+          Array.prototype.forEach.call(slides, function (slide, i) {
+            if (i === index) {
+              slide.classList.add("opacity-100");
+              slide.classList.remove("opacity-0");
+            } else {
+              slide.classList.remove("opacity-100");
+              slide.classList.add("opacity-0");
+            }
+          });
+        }
+
+        prevButton.addEventListener("click", function () {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlideIndex(currentIndex);
+          }
+        });
+
+        nextButton.addEventListener("click", function () {
+          if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateSlideIndex(currentIndex);
+          }
+        });
+
+        // Auto-slide functionality
+        setInterval(function () {
+          if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateSlideIndex(currentIndex);
+          } else {
+            currentIndex = 0;
+            updateSlideIndex(currentIndex);
+          }
+        }, 3000); // Change the interval time as needed
+
+        // Initialize the first slide
+        slides[0].classList.add("opacity-100");
+        slides[0].classList.remove("opacity-0");
+        const texts = [
+          "Surulere Sparkle Fest 2024",
+          "The best event experience you'll ever have!",
+          "Awards, Competitions, and Talent Hunts!",
+          "Join us for an unforgettable adventure!",
+        ];
+
+        let index = 0; // Current text index
+        let charIndex = 0; // Character index for current text
+        let isDeleting = false; // Whether the text is being erased
+        const typingSpeed = 100; // Speed for typing characters
+        const erasingSpeed = 50; // Speed for erasing characters
+        const delayBetweenTexts = 2000; // Delay before starting to erase
+
+        function typeEffect() {
+          const currentText = texts[index];
+          const typewriterElement = document.getElementById("typewriter-text");
+
+          if (isDeleting) {
+            typewriterElement.innerHTML = currentText.substring(0, charIndex--);
+          } else {
+            typewriterElement.innerHTML = currentText.substring(0, charIndex++);
+          }
+
+          if (!isDeleting && charIndex === currentText.length) {
+            setTimeout(() => (isDeleting = true), delayBetweenTexts); // Pause before starting to erase
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % texts.length; // Move to the next text
+          }
+
+          const delay = isDeleting ? erasingSpeed : typingSpeed;
+          setTimeout(typeEffect, delay); // Recursive typing function
+        }
+
+        // Start typing effect when the page loads
+        window.onload = typeEffect;
+      </script>
 
       <div class="text-center mx-4 sm:mx-8 lg:mx-20 my-10">
         <div
@@ -588,7 +542,7 @@ slides[0].classList.remove('opacity-0');
           class="text-xl sm:text-2xl mt-4 font-mono bg-white text-[#1D1D2F] p-6 sm:p-8 rounded-lg shadow-lg"
         >
           <h1 class="text-3xl sm:text-4xl font-bold mb-6">
-            Countdown to December 15
+            Countdown to December 10
           </h1>
 
           <!-- Countdown Values -->
@@ -626,14 +580,14 @@ slides[0].classList.remove('opacity-0');
       </div>
 
       <script>
-        // Set the target date to December 15 of the current year
+        // Set the target date to December 10 of the current year
         const targetDate = new Date(
           new Date().getFullYear(),
-          11,
-          15,
-          0,
-          0,
-          0
+          11, // December (0-based index)
+          10, // 10th day
+          0, // hours
+          0, // minutes
+          0 // seconds
         ).getTime();
 
         // Update the countdown every second
@@ -721,20 +675,21 @@ slides[0].classList.remove('opacity-0');
           <i class="fa-solid fa-arrow-down text-white animate-bounce"></i>
         </div>
       </div>
+      <p class="text-center text-[#494957] text-[40px]">Event Highlight</p>
       <section id="features" class="p-4 mt-[2rem] bg-[#1D1D2F]">
         <div>
-          <p class="text-center text-[#494957] text-[40px]">Event Highlight</p>
+          <!-- <p class="text-center text-[#494957] text-[40px]">Event Highlight</p> -->
         </div>
         <div class="flex flex-col md:flex-row justify-center gap-8">
           <!-- beauty  -->
           <div
             class="rounded-xl bg-[#EFF0F6] p-8 shadow-lg w-full md:w-[563px] transform transition duration-300 hover:rotate-3 hover:scale-105 force-transform"
           >
-            <h3 class="text-2xl font-bold mb-4">Beuty Pagent</h3>
+            <h3 class="text-2xl font-bold mb-4">Beauty pageants</h3>
             <p class="leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Obcaecati, nihil.
+              Beauty pageants are competitions that showcase beauty, talent, and
+              personality, emphasizing philanthropy and social awareness while
+              promoting diversity and empowerment among participants.
             </p>
             <img
               src="./img/advance analytics.png"
@@ -749,9 +704,9 @@ slides[0].classList.remove('opacity-0');
           >
             <h3 class="text-2xl font-bold mb-4">Awards</h3>
             <p class="leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Obcaecati, nihil.
+              Awards are formal recognitions for outstanding achievements in
+              various fields, celebrating excellence and motivating continued
+              success through ceremonies and various forms of acknowledgment.
             </p>
             <img
               src="./img/user journey.png"
@@ -768,9 +723,10 @@ slides[0].classList.remove('opacity-0');
           >
             <h3 class="text-2xl font-bold mb-4">Talent hunt</h3>
             <p class="leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Obcaecati, nihil.
+              Talent hunts are competitions showcasing individuals' unique
+              skills in areas like music, dance, or acting, providing
+              opportunities for exposure, development, and recognition in their
+              respective fields.
             </p>
             <img
               src="./img/talent.jpg"
@@ -784,9 +740,10 @@ slides[0].classList.remove('opacity-0');
           >
             <h3 class="text-2xl font-bold mb-4">Games</h3>
             <p class="leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              doloribus. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Obcaecati, nihil.
+              Games are structured activities for enjoyment and competition,
+              including sports and video games, promoting social interaction,
+              strategy, and skill development across various formats and
+              interests.
             </p>
             <img
               src="./img/maingame.jpg"
@@ -797,12 +754,12 @@ slides[0].classList.remove('opacity-0');
         </div>
 
         <div class="flex justify-center items-center mt-[3rem] p-[30px]">
-          <a
+          <!-- <a
             href="#"
             class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
           >
             Learn More
-          </a>
+          </a> -->
         </div>
       </section>
 
@@ -916,29 +873,204 @@ slides[0].classList.remove('opacity-0');
         ></div>
       </div>
 
-      <div class="flex justify-center items-center mt-[3rem] p-[30px]">
+      <!-- <div class="flex justify-center items-center mt-[3rem] p-[30px]">
         <a
           href="#"
           class="learn-more-btn inline-block text-center bg-[#494957] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
         >
           Learn More
         </a>
-      </div>
+      </div> -->
       <div class="text-2xl md:text-3xl lg:text-4xl">
         <span id="typewriter-text"></span>
         <span class="border-r-2 border-white animate-blink ml-1"></span>
       </div>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9425803963698310"
-      crossorigin="anonymous"></script>
- <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-format="fluid"
-      data-ad-layout-key="-fb+5w+4e-db+86"
-      data-ad-client="ca-pub-9425803963698310"
-      data-ad-slot="4790977117"></ins>
- <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
- </script>
+
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-format="fluid"
+        data-ad-layout-key="-fb+5w+4e-db+86"
+        data-ad-client="ca-pub-9425803963698310"
+        data-ad-slot="4790977117"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+      <section class="p-8 bg-gray-100 min-h-screen">
+        <h2 class="text-center text-4xl font-bold text-indigo-700 mb-10">
+          Our Guests
+        </h2>
+
+        <div
+          class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 container mx-auto"
+          id="guestCards"
+        >
+          <!-- Card 1 -->
+          <div
+            class="max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 1"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 1</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 2"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 2</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+
+          <!-- Hidden Cards -->
+          <div
+            class="hidden extra-card max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 3"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 3</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="hidden extra-card max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 4"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 5</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+          <div
+            class="hidden extra-card max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 4"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 5</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+          <div
+            class="hidden extra-card max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 4"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 7</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+          <div
+            class="hidden extra-card max-w-sm rounded overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              class="w-full object-cover object-center h-64 sm:h-72"
+              src="https://via.placeholder.com/400x300"
+              alt="Guest Image 4"
+            />
+            <div class="px-6 py-4">
+              <h3 class="font-bold text-xl mb-2">Guest 8</h3>
+              <p class="text-gray-700">
+                Brief bio of the guest, highlighting achievements or role.
+              </p>
+            </div>
+          </div>
+
+          <!-- Add more hidden cards if needed following the same structure -->
+        </div>
+
+        <!-- Buttons for See More / See Less -->
+        <div class="text-center mt-8">
+          <button
+            id="seeMoreBtn"
+            class="px-6 py-2 text-white bg-indigo-600 hover:bg-indigo-800 rounded-lg transition-all"
+          >
+            See More
+          </button>
+          <button
+            id="seeLessBtn"
+            class="px-6 py-2 text-white bg-red-600 hover:bg-red-800 rounded-lg transition-all hidden"
+          >
+            See Less
+          </button>
+        </div>
+      </section>
+
+      <script>
+        const seeMoreBtn = document.getElementById("seeMoreBtn");
+        const seeLessBtn = document.getElementById("seeLessBtn");
+        const extraCards = document.querySelectorAll(".extra-card");
+
+        seeMoreBtn.addEventListener("click", () => {
+          extraCards.forEach((card) => card.classList.remove("hidden")); // Show extra cards
+          seeMoreBtn.classList.add("hidden"); // Hide See More button
+          seeLessBtn.classList.remove("hidden"); // Show See Less button
+        });
+
+        seeLessBtn.addEventListener("click", () => {
+          extraCards.forEach((card) => card.classList.add("hidden")); // Hide extra cards
+          seeLessBtn.classList.add("hidden"); // Hide See Less button
+          seeMoreBtn.classList.remove("hidden"); // Show See More button
+        });
+      </script>
+
       <footer class="bg-[#1D1D2F]">
         <div class="w-full p-5 sm:p-10">
           <!-- Footer Navigation -->
@@ -946,13 +1078,13 @@ slides[0].classList.remove('opacity-0');
             <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 list-none">
               <li>
                 <a
-                  href="./index.html"
+                  href="/index.html"
                   class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
                   >Home</a
                 >
               </li>
-              <li>
-            
+              <li></li>
+
               <li>
                 <a
                   href="/src/html/collage.html"
@@ -960,10 +1092,10 @@ slides[0].classList.remove('opacity-0');
                   >Collage</a
                 >
               </li>
-           
+
               <li>
                 <a
-                  href="./contact.html"
+                  href="/contact.html"
                   class="text-white text-lg sm:text-xl opacity-70 transition duration-500 hover:opacity-100"
                   >Contact Us</a
                 >
@@ -975,7 +1107,7 @@ slides[0].classList.remove('opacity-0');
         <!-- Footer Bottom -->
         <div class="p-3 sm:p-5 text-center">
           <p class="text-white text-sm sm:text-base">
-            Copyright &copy; 2023;
+            Developed By: Morakinyo Taylor
             <span class="uppercase tracking-wide font-normal opacity-70"
               >SuruFest</span
             >

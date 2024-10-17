@@ -1,236 +1,32 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Spiral Shape Design</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <style>
-    
-        .slide {
-          transition: opacity 0.2s;
-          opacity: 0;
-        }
-    
-        @keyframes blink {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0;
-          }
-        }
-        .animate-blink {
-          animation: blink 0.75s step-end infinite;
-        }
-    
-        /* .opacity-0 {
-        opacity: 0;
-        } */
-    
-        .opacity-100 {
-          opacity: 1;
-        }
-    
-        #text-scrolling {
-          @apply bg-gray-900 mt-40 p-2 rounded-lg transform -rotate-1;
-        }
-    
-        .scrolling-text--inner {
-          @apply flex items-center whitespace-nowrap font-semibold py-2 overflow-hidden relative z-10;
-        }
-    
-        .scrolling-text--item {
-          @apply inline-flex items-center px-8;
-        }
-    
-        .scrolling-text--item span {
-          @apply transition-all duration-200 ease-in-out text-white;
-        }
-    
-        .scrolling-text--inner.direction-left > div {
-          animation: scrollText-left var(--marquee-speed) linear infinite;
-        }
-    
-        .scrolling-text--inner.direction-right > div {
-          animation: scrollText-right var(--marquee-speed) linear infinite;
-        }
-    
-        @keyframes scrollText-left {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-    
-        @keyframes scrollText-right {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-    
-        @keyframes slide {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-    
-        .animate-slide {
-          animation: slide 35s linear infinite;
-        }
-        /* .force-transform {
-        transform: none !important;
-        } */
-        /* Ensure the animation pauses on hover */
-        .logos-slide:hover {
-          animation-play-state: paused;
-        }
-    
-    </style>
-    <section
-    aria-label="Newest Photos"
-    class="bg-[#EFF0F6] p-4 sm:p-8 relative"
-    >
-    <div class="relative overflow-hidden rounded-[25px] parent-container">
-      <!-- Overlay -->
-      <div
-        class="absolute inset-0 bg-black opacity-50 z-10 rounded-[25px]"
-      ></div>
-    
-      <!-- Slide-Up Text -->
-      <div
-        class="absolute inset-0 flex justify-center items-center z-20 text-[#DCDDEB] animate-slide-up px-4"
-      >
-        <div class="text-2xl md:text-4xl lg:text-5xl font-bold text-center">
-          <span id="typewriter-text"></span>
-          <span
-            class="border-r-2 border-[#40405D] animate-blink ml-1"
-          ></span>
-        </div>
-      </div>
-    
-      <!-- Navigation Buttons -->
-      <button
-        class="absolute z-30 top-1/2 left-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
-        id="prev-button"
-      >
-        <img
-          src="https://img.icons8.com/ios/50/less-than-2.png"
-          alt="Previous"
-          class="w-8 h-8 md:w-12 md:h-12"
-        />
-      </button>
-      <button
-        class="absolute z-30 top-1/2 right-4 -translate-y-1/2 bg-opacity-75 p-2 rounded-full hover:bg-opacity-100 focus:outline-none lg:visible md:visible invisible"
-        id="next-button "
-      >
-        <img
-          src="https://img.icons8.com/ios/50/more-than-2.png"
-          alt="Next"
-          class="w-8 h-8 md:w-12 md:h-12"
-        />
-      </button>
-    
-      <!-- Slider Content -->
-      <ul
-        class="m-0 p-0 list-none absolute top-0 left-0 w-full h-full"
-        id="slider"
-      >
-        <li
-          class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-          data-active
-        >
-          <img
-            src="/img/mainpic.png"
-            alt="Nature Image #1"
-            class="block w-full h-full object-contain rounded-[25px]"
-          />
-        </li>
-        <li
-          class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-        >
-          <img
-            src="./img/insta.png"
-            alt="Nature Image #2"
-            class="block w-full h-full object-contain rounded-[25px]"
-          />
-        </li>
-        <li
-          class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 delay-200"
-        >
-          <img
-            src="./img/kids.png"
-            alt="Nature Image #3"
-            class="block w-full h-full object-contain rounded-[25px]"
-          />
-        </li>
-      </ul>
-    </div>
-    </section>
-    
-    </body>
-<script>
-    
-const slider = document.getElementById('slider');
-const slides = slider.children;
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
-
-let currentIndex = 0;
-
-function updateSlideIndex(index) {
-  Array.prototype.forEach.call(slides, function(slide, i) {
-    if (i === index) {
-      slide.classList.add('opacity-100');
-      slide.classList.remove('opacity-0');
-    } else {
-      slide.classList.remove('opacity-100');
-      slide.classList.add('opacity-0');
-    }
-  });
+  <style>
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #f0f0f0; /* Optional background color */
 }
 
-prevButton.addEventListener('click', function() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlideIndex(currentIndex);
-  }
-});
-
-nextButton.addEventListener('click', function() {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-    updateSlideIndex(currentIndex);
-  }
-});
-
-// Auto-slide functionality
-setInterval(function() {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-    updateSlideIndex(currentIndex);
-  } else {
-    currentIndex = 0;
-    updateSlideIndex(currentIndex);
-  }
-}, 3000); // Change the interval time as needed
+.upside-down-ribbon {
+    position: relative;
+    width: 100vw; /* Full width */
+    height: 150px; /* Height of the ribbon */
+    background: linear-gradient(135deg, #FF6347, #4682B4); /* Example gradient colors */
+    clip-path: polygon(0 100%, 100% 100%, 100% 60%, 50% 0%, 0 60%); /* Upside-down curvy ribbon shape */
+}
 
 
-</script>
+
+
+  </style>
+      <div class="upside-down-ribbon"></div>
+</body>
+
 </html>
-
-
-
